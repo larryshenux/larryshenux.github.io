@@ -1,226 +1,97 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Temp Portfolio Assets</title>
-    <style>
-        :root {
-          --max-width: 1100px;
-          --gap: 1rem;
-        }
-        * { box-sizing: border-box; }
-        body {
-          margin: 0;
-          font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-          line-height: 1.5;
-          background: #f7f7f8;
-          color: #111;
-        }
-        header {
-          padding: 1.25rem;
-          text-align: center;
-          background: #fff;
-          box-shadow: 0 1px 4px rgba(0,0,0,.06);
-        }
-        main {
-          max-width: var(--max-width);
-          margin: 2rem auto;
-          padding: 0 1rem;
-        }
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: var(--gap);
-        }
-        @media (max-width: 900px) {
-          .grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-          .grid { grid-template-columns: 1fr; }
-        }
-        figure {
-          margin: 0;
-          background: #fff;
-          border-radius: 16px;
-          overflow: hidden;
-          box-shadow: 0 6px 16px rgba(0,0,0,.08);
-          border: 1px solid rgba(0,0,0,.06);
-          cursor: pointer;
-        }
-        img {
-          display: block;
-          width: 100%;
-          object-fit: cover;
-        }
-        figcaption {
-          padding: .75rem 1rem;
-          font-size: .95rem;
-          font-weight: bold;
-          color: #333;
-        }
-        footer {
-          text-align: center;
-          padding: 2rem 1rem 3rem;
-          color: #666;
-        }
-        .visually-hidden {
-          position: absolute !important;
-          width: 1px; height: 1px;
-          padding: 0; margin: -1px;
-          overflow: hidden; clip: rect(0, 0, 1px, 1px);
-          white-space: nowrap; border: 0;
-        }
-  
-        /* Lightbox Styles */
-        .lightbox {
-          position: fixed;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
-          background: rgba(0,0,0,0.85);
-          display: none;
-          align-items: center;
-          justify-content: center;
-          z-index: 999;
-        }
-        .lightbox img {
-          max-width: 90%;
-          max-height: 90%;
-          object-fit: contain;
-          border-radius: 12px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-        .lightbox button.close {
-          position: absolute;
-          top: 20px; right: 30px;
-          font-size: 2rem;
-          color: #fff;
-          background: none;
-          border: none;
-          cursor: pointer;
-        }
-      </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
   </head>
   <body>
-    <a class="visually-hidden" href="#content">Skip to content</a>
-    <header>
-      <h1>Portfolio Assets</h1>
-      <a href="https://www.figma.com/proto/M8AZR1kBB2Qv4zblaYKUoc/Bus-Wireframes?node-id=2-4&p=f&t=dLAgx4YXvikAtor2-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A4" target="_blank">Link to lo-fi prototype</a>
-    </header>
-
-    <main id="content">
-      <section class="grid" aria-label="Porfolio Assets">
-        <figure>
-            <img src="img-src/Tammy.jpg" alt="Tammy Persona" loading="lazy"/>
-          <figcaption>Persona - Tammy</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Billy.jpg" alt="Billy Persona" loading="lazy"/>
-          <figcaption>Persona - Billy</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Janet.jpg" alt="Janet Persona" loading="lazy"/>
-          <figcaption>Persona - Janet</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/user-journey-map1.jpg" alt="User Journey Map 1" loading="lazy"/>
-          <figcaption>User Journey Map 1</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/user-journey-map2.jpg" alt="User Journey Map 1" loading="lazy"/>
-          <figcaption>User Journey Map 2</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/IA-diagram.jpg" alt="IA Diagram" loading="lazy"/>
-          <figcaption>IA Diagram</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_1.jpg" alt="Wireframes 1_1.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_1</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_2.jpg" alt="Wireframes 1_2.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_2</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_3.jpg" alt="Wireframes 1_3.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_3</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_4.jpg" alt="Wireframes 1_4.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_4</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_5.jpg" alt="Wireframes 1_5.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_5</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_6.jpg" alt="Wireframes 1_6.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_6</figcaption>
-        </figure>
-
-        <figure>
-            <img src="img-src/Wireframes 1_7.jpg" alt="Wireframes 1_7.jpg" loading="lazy"/>
-          <figcaption>Wireframes 1_7</figcaption>
-        </figure>
-      </section>
-    </main>
-
-    <div class="lightbox" id="lightbox">
-        <button class="close" aria-label="Close">×</button>
-        <img src="" alt="Expanded view" />
+    <nav class="navbar navbar-expand bg-body-tertiary">
+      <div class="container">
+        <div class="row justify-content-center w-100">
+          <div class="col-8 d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">Larry Shen</a>
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <button class="btn nav-item" id="theme-toggle">
+                <i class="bi bi-sun-fill" id="theme-icon"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        
-        
-        <footer>
-        <small>© <span id="year"></span> Larry Shen</small>
-        </footer>
-        
-        
-        <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = lightbox.querySelector('img');
-        const closeBtn = lightbox.querySelector('.close');
-        
-        
-        document.querySelectorAll('figure').forEach(fig => {
-        fig.addEventListener('click', () => {
-        const src = fig.getAttribute('data-src') || fig.querySelector('img').src;
-        lightboxImg.src = src;
-        lightbox.style.display = 'flex';
-        });
-        });
-        
-        
-        closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-        });
-        
-        
-        lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-        }
-        });
-        </script>
+      </div>
+    </nav>
+
+    <div class="bg-body py-5 d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <!-- Placeholder avatar image with aspect ratio 1:1 -->
+            <div class="ratio ratio-1x1 w-50">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSiRS_A1L2gPQlka93TibY4AC8FPCnQa5CYQ&s" class="rounded-circle object-fit-cover shadow" alt="Profile picture">
+            </div>
+          </div>
+          <div class="col-4 d-flex align-items-center">
+            <div>
+              <h1 class="mb-2">Hi, I'm Larry</h1>
+              <p class="lead mb-0">
+                I currently work full time as a fullstack engineer, but in my spare time, I like to work on UX side projects.
+                I get excited whenever I interact with good, thoughtful design, and as an aspiring UX designer, I enjoy all the learning that comes with it. 
+                I'm excited to share my journey and projects with you here!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-body-secondary py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="card shadow mb-4">
+              <div class="row g-0">
+                <div class="col-6">
+                  <img src="img-src\card-img\nextstop-card-img.png" class="img-fluid rounded-start object-fit-cover h-100" alt="Card image">
+                </div>
+                <div class="col-6">
+                  <div class="card-body">
+                    <div class="meta mb-2">
+                      <small class="text-muted">MOBILE UI • UX RESEARCH</small>
+                    </div>
+                    <h2 class="card-title">NextStop</h2>
+                    <p class="card-text">A one-stop shop app designed for parents and students to access all bus/school transportation related information.</p>
+                    <a href="#" class="btn btn-dark">View Project</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card shadow mb-4">
+              <div class="row g-0">
+                <div class="col-6">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSiRS_A1L2gPQlka93TibY4AC8FPCnQa5CYQ&s" class="img-fluid rounded-start object-fit-cover h-100" alt="Card image">
+                </div>
+                <div class="col-6">
+                  <div class="card-body">
+                    <div class="meta mb-2">
+                      <small class="text-muted">CASE STUDY • UXD</small>
+                    </div>
+                    <h2 class="card-title">TBD</h2>
+                    <p class="card-text">New project comming soon!</p>
+                    <a href="#" class="btn btn-dark">View Project</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-
-
-
