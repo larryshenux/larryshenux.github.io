@@ -1,20 +1,23 @@
-/* Hero Section */
 .hero-section {
     position: relative;
     height: 100vh;
-    background-image: url('nextstop/hero2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
     will-change: transform;
 }
 
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 .hero-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     opacity: 0;
@@ -23,10 +26,10 @@
 }
 
 .project-title {
-    position: fixed;
-    bottom: 33%;
+    position: absolute;
+    top: 60%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     color: white;
     font-size: 4rem;
     font-weight: 600;
