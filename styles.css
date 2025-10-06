@@ -22,6 +22,10 @@ body {
     border-radius: 6px;
     padding: 0.5rem 1rem !important;
     transition: all 0.2s ease-out;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .nav-link:hover {
@@ -29,10 +33,24 @@ body {
     background-color: #1F2937;
 }
 
+@media (hover: hover) {
+    .nav-link:active {
+        color: #ffffff !important;
+        background-color: #1F2937;
+        opacity: 0.8;
+    }
+}
+
 #theme-toggle {
     border-radius: 6px;
     padding: 0.5rem;
     transition: all 0.2s ease-out;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    outline: none !important;
+    -webkit-touch-callout: none;
 }
 
 #theme-toggle:hover {
@@ -40,12 +58,91 @@ body {
     color: #ffffff;
 }
 
+@media (hover: hover) {
+    #theme-toggle:active {
+        background-color: #1F2937;
+        color: #ffffff;
+        opacity: 0.8;
+    }
+}
+
+/* Card styles */
+.card {
+    transition: transform 0.2s ease-out;
+}
+
+.card .row {
+    min-height: 300px;
+}
+
+.bg-body-secondary {
+    background-color: var(--bs-secondary-bg);
+}
+
+.card img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .btn {
+    width: fit-content;
+}
+
+@media (max-width: 767.98px) {
+    .card .row {
+        min-height: auto;
+    }
+    
+    .card img {
+        height: 200px;
+        object-position: center;
+    }
+    
+    .card-body {
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .card .col-12.col-md-6:first-child {
+        display: block;
+    }
+    
+    .card .col-12.col-md-6:first-child img {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 .bg-body-secondary {
     flex-grow: 1;
 }
 
-.w-50 {
-    width: 50% !important;
+/* Profile image styles */
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Bio section spacing */
+@media (min-width: 768px) {
+    .bio-section .row {
+        gap: 2rem;
+    }
+    .bio-section .col-md-4 {
+        width: calc(33.333% - 1rem);
+    }
 }
 
 /* Dark mode styles */
