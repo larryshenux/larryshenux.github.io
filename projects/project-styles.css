@@ -1,0 +1,83 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('nextstop/hero2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+}
+
+.hero-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+}
+
+.project-title {
+    position: fixed;
+    bottom: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 4rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+}
+
+/* Classes added by JavaScript based on scroll */
+.hero-overlay.visible {
+    opacity: 1;
+}
+
+.project-title.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Project Info Table */
+.project-info {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.project-info td {
+    padding: 1rem 0;
+    border: none;
+    vertical-align: top;
+}
+
+.project-info td:first-child {
+    width: 150px;
+    color: var(--bs-body-color);
+}
+
+/* Dark mode adjustments */
+[data-bs-theme="dark"] .project-info td:first-child {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .project-info td {
+    color: #E5E7EB;
+}
+
+/* Dark mode adjustments for content sections */
+[data-bs-theme="dark"] h2 {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] p {
+    color: #E5E7EB;
+}

@@ -17,6 +17,29 @@ body {
     margin-left: 1rem;
 }
 
+/* Navbar hover styles - Light Mode */
+.nav-link {
+    border-radius: 6px;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease-out;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+    background-color: #1F2937;
+}
+
+#theme-toggle {
+    border-radius: 6px;
+    padding: 0.5rem;
+    transition: all 0.2s ease-out;
+}
+
+#theme-toggle:hover {
+    background-color: #1F2937;
+    color: #ffffff;
+}
+
 .bg-body-secondary {
     flex-grow: 1;
 }
@@ -40,6 +63,17 @@ body {
 
 [data-bs-theme="dark"] .navbar-brand {
     color: #ffffff;
+}
+
+/* Dark mode navbar hover styles */
+[data-bs-theme="dark"] .nav-link:hover {
+    color: #1F2937 !important;
+    background-color: #E5E7EB;
+}
+
+[data-bs-theme="dark"] #theme-toggle:hover {
+    background-color: #E5E7EB;
+    color: #1F2937;
 }
 
 [data-bs-theme="dark"] .text-muted {

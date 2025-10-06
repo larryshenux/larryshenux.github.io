@@ -1,0 +1,12 @@
+/* Styles specific to NextStop project page */
+.project-info-section {
+    padding: 5rem 0;
+    width: 100%;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.project-info {
+    margin: 0;
+    width: 100%;
+}
