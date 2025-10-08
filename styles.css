@@ -22,10 +22,6 @@ body {
     border-radius: 6px;
     padding: 0.5rem 1rem !important;
     transition: all 0.2s ease-out;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
 }
 
 .nav-link:hover {
@@ -33,37 +29,15 @@ body {
     background-color: #1F2937;
 }
 
-@media (hover: hover) {
-    .nav-link:active {
-        color: #ffffff !important;
-        background-color: #1F2937;
-        opacity: 0.8;
-    }
-}
-
-#theme-toggle {
+#theme-toggle, #theme-toggle-mobile {
     border-radius: 6px;
     padding: 0.5rem;
     transition: all 0.2s ease-out;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    outline: none !important;
-    -webkit-touch-callout: none;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover, #theme-toggle-mobile:hover {
     background-color: #1F2937;
     color: #ffffff;
-}
-
-@media (hover: hover) {
-    #theme-toggle:active {
-        background-color: #1F2937;
-        color: #ffffff;
-        opacity: 0.8;
-    }
 }
 
 /* Card styles */
@@ -168,7 +142,8 @@ body {
     background-color: #E5E7EB;
 }
 
-[data-bs-theme="dark"] #theme-toggle:hover {
+[data-bs-theme="dark"] #theme-toggle:hover,
+[data-bs-theme="dark"] #theme-toggle-mobile:hover {
     background-color: #E5E7EB;
     color: #1F2937;
 }
