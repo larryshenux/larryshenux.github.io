@@ -92,7 +92,7 @@
             <div class="col-8">
                 <h2 class="mb-4">Design Process</h2>
                 <p>The first thing I needed to do was to fully understand the problems I had to address. While I knew generally what should be in the bus app, I didn't know the specific pain points and challenges faced by users. With this in mind, I thought of some interview questions I wanted to ask my target audience to better understand their needs.</p>
-                <h3>Questions I asked</h3>
+                <h3>Questions</h3>
                 <ul>
                     <li>Where do you currently get bus route information?</li>
                     <li>Are you satisfied with the way you get this information and of the information itself?</li>
@@ -103,29 +103,76 @@
                     <li>What features would you find most useful in a bus information app?</li>
                     <li>Are there any additional things that could be added to the bus route information that could prove useful for you?</li>
                 </ul>
-                <p>I interviewed 2 parents and 1 student for this part. During the interview, I realized that being able to ask great follow-up questions is a crucial skill for uncovering deeper insights. Even though I had prepared questions in advance, I never really knew what responses I would get from my interviewees. Being adaptable and quick to jump on key points during these interviews would help me get a clearer picture of the problem and allow me to create more accurate personas.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Personas -->
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h2 class="mb-4">Personas</h2>
-                <div class="personas-container">
-                    <div class="persona">
-                        <img src="nextstop-assets/persona-tammy.png" alt="Tammy Persona" class="persona-image">
+                <p>I interviewed 2 parents and 1 student for this part. During the interview, I realized that being able to ask great follow-up questions is a crucial skill for uncovering deeper insights. Even though I had prepared questions in advance, I never really knew what responses I would get from my interviewees. Being adaptable and quick to jump on key points would help me get a clearer picture of the problem and allow me to create more accurate personas.</p>
+                <div id="personasCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="12000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#personasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#personasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#personasCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="nextstop-assets/persona-tammy.png" class="d-block w-100 persona-carousel-img" alt="Tammy Persona">
                     </div>
-                    <div class="persona">
-                        <img src="nextstop-assets/persona-billy.png" alt="Billy Persona" class="persona-image">
+                    <div class="carousel-item">
+                        <img src="nextstop-assets/persona-billy.png" class="d-block w-100 persona-carousel-img" alt="Billy Persona">
                     </div>
-                    <div class="persona">
-                        <img src="nextstop-assets/persona-janet.png" alt="Janet Persona" class="persona-image">
+                    <div class="carousel-item">
+                        <img src="nextstop-assets/persona-janet.png" class="d-block w-100 persona-carousel-img" alt="Janet Persona">
                     </div>
                 </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#personasCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#personasCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+            <h3 class="mt-4">Personas</h3>
+            <p>With the data collected from my interviews, I constructed 3 personas to cover both the student and parent perspective, which I used to distill my findings into user stories. I then narrowed down on the problem by converting each user story into a problem statement, summarizing their needs in one sentence.</p>
+            <h4>User Stories and Problem Statements</h4>
+            <h5>Tammy</h5>
+            <table class="content-table indented-table">
+              <tr>
+                <td>User Story</td>
+                <td>As a busy mother of two, I would like an easy way to access all relevant and up-to-date bus related information in one place so that I don't have to spend time searching for them.</td>
+              </tr>
+              <tr>
+                <td>Problem Statement</td>
+                <td>Tammy is a busy mother who needs a quick and convenient way of accessing bus information because it will save her from having to spend extra mental bandwidth scouring for that information.</td>
+              </tr>
+            </table>
+            <h5>Billy</h5>
+            <table class="content-table indented-table">
+              <tr>
+                <td>User Story</td>
+                <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to feel at ease when I'm waiting at the bus stop.</td>
+              </tr>
+              <tr>
+                <td>Problem Statement</td>
+                <td>Billy is a student who needs real-time updates on bus status so he can plan his arrival at the bus stop and avoid unnecessary waiting or missed buses.</td>
+              </tr>
+            </table>
+            <h5>Janet</h5>
+            <table class="content-table indented-table">
+              <tr>
+                <td>User Story</td>
+                <td>As a mother who isn't great with technology, it would help me if the bus route map/app is easy to use so that I can quickly get the information I need.</td>
+              </tr>
+              <tr>
+                <td>Problem Statement</td>
+                <td>Janet needs a user-friendly bus information app because a complicated interface makes it difficult for her to find the information she needs in a timely manner.</td>
+              </tr>
+            </table>
+            <h4>Hypothesis Statements</h4>
+            <p>Based on the user stories and problem statements, I came up with the following hypotheses:</p>
+            <ol>
+                <li>If Tammy can get bus information from an app designed specifically for that purpose, all the information she needs will be contained in one place, ensuring her convenience.</li>
+                <li>If Billy can conveniently see bus status updates within an app on his phone, he will not feel as rushed or worried in the morning as he prepares to leave for school.</li>
+                <li>If Janet can use an app with minimal elements and a familiar layout, it would greatly improve her experience of finding the bus information she needs.</li>
+            </ol>
         </div>
     </div>
 
