@@ -43,6 +43,24 @@
 .carousel-inner {
     background: transparent;
 }
+
+/* Smooth crossfade transition for wireframes carousel */
+#wireframesCarousel.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#wireframesCarousel.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+#wireframesCarousel.carousel-fade .carousel-item:not(.active) {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+}
+
 .persona-carousel-img {
     width: 100%;
     height: auto;
@@ -286,6 +304,12 @@ ol li, ul li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
+
+/* Add extra margin between hypothesis statement list items */
+ol.text-secondary.fst-italic > li {
+  margin-bottom: 1.25em;
+}
+
 [data-bs-theme="dark"] ol,
 [data-bs-theme="dark"] ul {
   color: #E5E7EB;
@@ -303,4 +327,26 @@ ol li, ul li {
 [data-bs-theme="dark"] td {
   color: #E5E7EB;
   border-color: #444;
+}
+
+[data-bs-theme="dark"] .user-journey-caption,
+[data-bs-theme="dark"] .user-journey-caption.text-secondary {
+  color: #cdcfd2 !important;
+}
+
+/* Custom callout style similar to Bootstrap docs */
+.bd-callout {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 0.25rem solid #5bc0de;
+  background-color: #d1f3fa;
+  border-radius: 0.25rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+li, td {
+    font-size: 1.1rem;
 }

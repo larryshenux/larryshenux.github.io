@@ -28,7 +28,15 @@ function updateColoredSections() {
     
     coloredSections.forEach(section => {
         const baseColor = section.getAttribute('data-base-color');
-        section.style.backgroundColor = isDarkMode ? invertHexColor(baseColor) : baseColor;
+        const borderColor = section.getAttribute('data-border-color');
+        const bgColor = isDarkMode ? invertHexColor(baseColor) : baseColor;
+        section.style.backgroundColor = bgColor;
+        if (borderColor) {
+            const border = isDarkMode ? invertHexColor(borderColor) : borderColor;
+            section.style.borderColor = border;
+        } else {
+            section.style.borderColor = bgColor;
+        }
     });
 }
 

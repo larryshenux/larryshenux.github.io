@@ -49,7 +49,7 @@
     </div>
 
     <!-- Project Info Section -->
-    <section class="project-info-section" data-base-color="#FEF6C2">
+    <section class="project-info-section" data-base-color="#fef6c2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-8">
@@ -79,7 +79,7 @@
                 <p>Ever been late for the school bus before? Or worse yet, experience that sinking feeling as your bus turns a corner and drives off right as you come into sight of your bus stop? You knew you were running late, but that didn't stop you from trying. Wouldn't it be nice to have a way of knowing where the bus is at all times?</p>
                 <p>For parents, it's not always easy to find the information you need on transportation, bus stops, bus times, etc. If you're lucky, there might be a convenient link somewhere on your child's school website. But more often than not, you will likely have to dig through the pages or resort to a search to find what you need. Wouldn't it be helpful to have all that information in one place, organized in a structured, easy to use medium?</p>
                 <br>
-                <p>Enter NextStop, a mobile app designed to be your one-stop-shop for all things related to bus information.</p>
+                <p class="blockquote">Enter <strong>NextStop</strong>, a mobile app designed to be your one-stop-shop for all things related to bus information.</p>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
                     <li>Are there any additional things that could be added to the bus route information that could prove useful for you?</li>
                 </ul>
                 <p>I interviewed 2 parents and 1 student for this part. During the interview, I realized that being able to ask great follow-up questions is a crucial skill for uncovering deeper insights. Even though I had prepared questions in advance, I never really knew what responses I would get from my interviewees. Being adaptable and quick to jump on key points would help me get a clearer picture of the problem and allow me to create more accurate personas.</p>
-                <div id="personasCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="12000">
+                <div id="personasCarousel" class="carousel slide my-5" data-bs-ride="carousel" data-bs-interval="12000">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#personasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#personasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -128,52 +128,73 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <h3 class="mt-4">Personas</h3>
-            <p>With the data collected from my interviews, I constructed 3 personas to cover both the student and parent perspective, which I used to distill my findings into user stories. I then narrowed down on the problem by converting each user story into a problem statement, summarizing their needs in one sentence.</p>
-            <h4>User Stories and Problem Statements</h4>
-            <h5>Tammy</h5>
-            <table class="content-table indented-table">
-              <tr>
-                <td>User Story</td>
-                <td>As a busy mother of two, I would like an easy way to access all relevant and up-to-date bus related information in one place so that I don't have to spend time searching for them.</td>
-              </tr>
-              <tr>
-                <td>Problem Statement</td>
-                <td>Tammy is a busy mother who needs a quick and convenient way of accessing bus information because it will save her from having to spend extra mental bandwidth scouring for that information.</td>
-              </tr>
-            </table>
-            <h5>Billy</h5>
-            <table class="content-table indented-table">
-              <tr>
-                <td>User Story</td>
-                <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to feel at ease when I'm waiting at the bus stop.</td>
-              </tr>
-              <tr>
-                <td>Problem Statement</td>
-                <td>Billy is a student who needs real-time updates on bus status so he can plan his arrival at the bus stop and avoid unnecessary waiting or missed buses.</td>
-              </tr>
-            </table>
-            <h5>Janet</h5>
-            <table class="content-table indented-table">
-              <tr>
-                <td>User Story</td>
-                <td>As a mother who isn't great with technology, it would help me if the bus route map/app is easy to use so that I can quickly get the information I need.</td>
-              </tr>
-              <tr>
-                <td>Problem Statement</td>
-                <td>Janet needs a user-friendly bus information app because a complicated interface makes it difficult for her to find the information she needs in a timely manner.</td>
-              </tr>
-            </table>
-            <h4>Hypothesis Statements</h4>
-            <p>Based on the user stories and problem statements, I came up with the following hypotheses:</p>
-            <ol>
-                <li>If Tammy can get bus information from an app designed specifically for that purpose, all the information she needs will be contained in one place, ensuring her convenience.</li>
-                <li>If Billy can conveniently see bus status updates within an app on his phone, he will not feel as rushed or worried in the morning as he prepares to leave for school.</li>
-                <li>If Janet can use an app with minimal elements and a familiar layout, it would greatly improve her experience of finding the bus information she needs.</li>
-            </ol>
-            <p>Through these hypothesis statements, I determined the focus for my app, summarized into one value proposition:</p>
-            <p>NextStop provides a streamlined experience for parents and students to get the bus information they need at their fingertips. It sports an intuitive interface and added features like bus location tracking and estimated arrival times so that no one will be in the dark about their bus's whereabouts.</p>
-            
+            <h3 class="mt-4">User Journeys</h3>
+            <p>Once I had defined user personas, I created two user journey maps for the current flow they take to find bus route information or to receive bus updates, helping me understand their pain points and behaviors from their perspective.</p>
+
+            <!-- User Journey Maps -->
+            <div class="my-5">
+                <img src="nextstop-assets/user-journey-map-1.png" alt="User Journey Map 1" class="img-fluid w-100 rounded shadow-sm">
+                <div class="text-center text-secondary mt-2 small user-journey-caption">User Journey Map 1: Parent's Experience</div>
+            </div>
+            <div class="my-5">
+                <img src="nextstop-assets/user-journey-map-2.png" alt="User Journey Map 2" class="img-fluid w-100 rounded shadow-sm">
+                <div class="text-center text-secondary mt-2 small user-journey-caption">User Journey Map 2: Student's Experience</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h2 class="mb-4">Define</h2>
+                <p>With the journey maps created, I was ready to define the main problems that my app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account as well as the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
+                <h3>User Stories and Problem Statements</h3>
+                <p>It was interesting for me to see the similarities and differences between the user stories and problem statements. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it more tangible to address.</p>
+                <h4>Tammy</h4>
+                <table class="content-table indented-table">
+                <tr>
+                    <td>User Story</td>
+                    <td>As a busy mother of two, I would like an easy way to access all relevant and up-to-date bus related information in one place so that I don't have to spend time searching for them.</td>
+                </tr>
+                <tr>
+                    <td>Problem Statement</td>
+                    <td>Tammy is a busy mother who needs a quick and convenient way of accessing bus information because it will save her from having to spend extra mental bandwidth scouring for that information.</td>
+                </tr>
+                </table>
+                <h4>Billy</h4>
+                <table class="content-table indented-table">
+                <tr>
+                    <td>User Story</td>
+                    <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to feel at ease when I'm waiting at the bus stop.</td>
+                </tr>
+                <tr>
+                    <td>Problem Statement</td>
+                    <td>Billy is a student who needs real-time updates on bus status so he can plan his arrival at the bus stop and avoid unnecessary waiting or missed buses.</td>
+                </tr>
+                </table>
+                <h4>Janet</h4>
+                <table class="content-table indented-table">
+                <tr>
+                    <td>User Story</td>
+                    <td>As a mother who isn't great with technology, it would help me if the bus route map/app is easy to use so that I can quickly get the information I need.</td>
+                </tr>
+                <tr>
+                    <td>Problem Statement</td>
+                    <td>Janet needs a user-friendly bus information app because a complicated interface makes it difficult for her to find the information she needs in a timely manner.</td>
+                </tr>
+                </table>
+                <h4>Hypothesis Statements</h4>
+                <p>Based on the user stories and problem statements, I came up with the following hypotheses:</p>
+                <ol class="text-secondary fst-italic">
+                    <li>If Tammy can get bus information from an app designed specifically for that purpose, all the information she needs will be contained in one place, ensuring her convenience.</li>
+                    <li>If Billy can conveniently see bus status updates within an app on his phone, he will not feel as rushed or worried in the morning as he prepares to leave for school.</li>
+                    <li>If Janet can use an app with minimal elements and a familiar layout, it would greatly improve her experience of finding the bus information she needs.</li>
+                </ol>
+                <p>Through these hypothesis statements, I determined the focus for my app, summarized into one value proposition:</p>
+                <div class="bd-callout" data-border-color="#ffc107" data-base-color="#fef095">
+                  <p><strong>NextStop</strong> provides a <i>streamlined experience</i> for parents and students to get the bus information they need at their fingertips. It sports an intuitive interface and added features like <i>bus location tracking</i> and <i>estimated arrival times</i> so that no one will be in the dark about their bus's whereabouts.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -204,7 +225,7 @@
                 <img src="nextstop-assets/nextstop-ia-diagram.jpg" alt="NextStop Information Architecture Diagram" class="img-fluid my-4">
                 <p>With the IA diagram as a guide, I was ready to proceed to the next step: sketching out wireframes for the main screens of the app.</p>
                 <h3>Wireframes</h3>
-                <div id="wireframesCarousel" class="carousel slide my-4" data-bs-ride="carousel" data-bs-interval="9000">
+                <div id="wireframesCarousel" class="carousel carousel-fade my-4" data-bs-ride="carousel" data-bs-interval="8000">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -214,24 +235,19 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="nextstop-assets/wf-1.jpg" class="d-block w-100" alt="Wireframe Welcome">
-                            <div class="fw-semibold text-center mt-3">Welcome</div>
+                            <img src="nextstop-assets/wf-1.jpg" class="d-block w-100 persona-carousel-img" alt="Welcome Screen">
                         </div>
                         <div class="carousel-item">
-                            <img src="nextstop-assets/wf-2.jpg" class="d-block w-100" alt="Wireframe My Routes">
-                            <div class="fw-semibold text-center mt-3">My Routes</div>
+                            <img src="nextstop-assets/wf-2.jpg" class="d-block w-100 persona-carousel-img" alt="My Routes Screen">
                         </div>
                         <div class="carousel-item">
-                            <img src="nextstop-assets/wf-3.jpg" class="d-block w-100" alt="Wireframe Route Search">
-                            <div class="fw-semibold text-center mt-3">Route Search</div>
+                            <img src="nextstop-assets/wf-3.jpg" class="d-block w-100 persona-carousel-img" alt="Route Search Screen">
                         </div>
                         <div class="carousel-item">
-                            <img src="nextstop-assets/wf-4.jpg" class="d-block w-100" alt="Wireframe Notifications">
-                            <div class="fw-semibold text-center mt-3">Notifications</div>
+                            <img src="nextstop-assets/wf-4.jpg" class="d-block w-100 persona-carousel-img" alt="Notifications Screen">
                         </div>
                         <div class="carousel-item">
-                            <img src="nextstop-assets/wf-5.jpg" class="d-block w-100" alt="Wireframe Information">
-                            <div class="fw-semibold text-center mt-3">Information</div>
+                            <img src="nextstop-assets/wf-5.jpg" class="d-block w-100 persona-carousel-img" alt="Information Screen">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#wireframesCarousel" data-bs-slide="prev">
@@ -243,6 +259,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+                
             </div>
         </div>
     </div>
