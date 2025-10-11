@@ -1,3 +1,9 @@
+/* Always show native horizontal scrollbar for horizontally scrolling image */
+.horizontal-scrollbar {
+  overflow-x: scroll !important;
+  overflow-y: hidden;
+  scrollbar-gutter: stable both-edges;
+}
 /* Highlight for wireframes carousel caption text */
 #wireframesCarousel .carousel-caption h5 span {
   background: rgba(255, 255, 255, 0.8);
@@ -27,11 +33,11 @@
 /* Ensure all wireframe carousel images are the same size and aspect ratio */
 #wireframesCarousel .carousel-item {
   position: relative;
-  min-height: 600px; /* Adjust as needed for your design */
 }
 #wireframesCarousel .carousel-item img {
-  width: 100%;
-  height: 600px; /* Match min-height above */
+  width: 120%;
+  height: auto;
+  max-height: 600px;
   object-fit: contain;
   background: #fff;
   display: block;
@@ -329,8 +335,8 @@ ol.text-secondary.fst-italic > li {
   border-color: #444;
 }
 
-[data-bs-theme="dark"] .user-journey-caption,
-[data-bs-theme="dark"] .user-journey-caption.text-secondary {
+[data-bs-theme="dark"] .image-caption,
+[data-bs-theme="dark"] .image-caption.text-secondary {
   color: #cdcfd2 !important;
 }
 

@@ -1,3 +1,20 @@
+// Enable horizontal scroll with mouse wheel when hovering over a wide image scroller
+function enableHorizontalScrollOnHover(scrollerId) {
+    var scroller = document.getElementById(scrollerId);
+    if (scroller) {
+        scroller.addEventListener('wheel', function(e) {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                scroller.scrollLeft += e.deltaY;
+            }
+        }, { passive: false });
+    }
+}
+
+// Auto-enable for wide-image-horizontal-scroller if present
+document.addEventListener('DOMContentLoaded', function() {
+    enableHorizontalScrollOnHover('wide-image-horizontal-scroller');
+});
 // Color utilities
 function invertHexColor(hex) {
     // Remove the hash if present
