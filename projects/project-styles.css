@@ -1,3 +1,7 @@
+.list-gap > li {
+  padding-inline-start: 1em;
+  list-style-position: outside;
+}
 /* Always show native horizontal scrollbar for horizontally scrolling image */
 .horizontal-scrollbar {
   overflow-x: scroll !important;
@@ -297,7 +301,7 @@ h3 {
   font-weight: bold;
 }
 
-.indented-table {
+.indent {
   margin-left: 1rem;
 }
 

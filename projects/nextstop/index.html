@@ -151,7 +151,7 @@
                 <h3 class="mt-5">User Stories and Problem Statements</h3>
                 <p>It was interesting for me to see the similarities and differences between the user stories and problem statements. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it more tangible to address.</p>
                 <h4>Tammy</h4>
-                <table class="content-table indented-table">
+                <table class="content-table indent">
                 <tr>
                     <td>User Story</td>
                     <td>As a busy mother of two, I would like an easy way to access all relevant and up-to-date bus related information in one place so that I don't have to spend time searching for them.</td>
@@ -162,7 +162,7 @@
                 </tr>
                 </table>
                 <h4>Billy</h4>
-                <table class="content-table indented-table">
+                <table class="content-table indent">
                 <tr>
                     <td>User Story</td>
                     <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to feel at ease when I'm waiting at the bus stop.</td>
@@ -173,7 +173,7 @@
                 </tr>
                 </table>
                 <h4>Janet</h4>
-                <table class="content-table indented-table">
+                <table class="content-table indent">
                 <tr>
                     <td>User Story</td>
                     <td>As a mother who isn't great with technology, it would help me if the bus route map/app is easy to use so that I can quickly get the information I need.</td>
@@ -262,11 +262,75 @@
                 <img src="nextstop-assets/bottom-nav-wf.png" alt="Bottom Navigation Wireframe" class="img-fluid my-5 shadow-sm d-block mx-auto">
                 <p>During the wireframing process, I found the "Search Routes" screen to be redundant. The problem was that users already have the option to add routes from the "My Routes" screen, not to mention that they are also inputting their address at the start during the set up of the app. It's unlikely users would want to search for a district they're not zoned for, but in the event they needed to switch districts or addresses, it would make more sense for them to do so in a "Settings" page. Once updated, they will have the option to add routes for their new location on the "My Routes" screen.</p>
                 <h3 class="mt-5">Usability Study</h3>
-                <p>With the wireframes ready to go, I was ready to test them out with users. I created a simple lo-fi prototype using the completed wireframes and conducted a usability study with 4 participants. I wanted to identify any usability issues and gather feedback on the functionality of the app.</p>
-                <div class="horizontal-scrollbar" id="wide-image-horizontal-scroller" style="width: 100%; max-width: 100%;">
+                <p>With the wireframes ready to go, I was ready to test them out with users. I created a simple lo-fi prototype using the completed wireframes and conducted a usability study with 4 participants to identify any usability issues and gather feedback on the functionality of the app.</p>
+                <div class="horizontal-scrollbar mt-4" style="width: 100%; max-width: 100%;">
                     <img src="nextstop-assets/nextstop-lofi-wireframes.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
                 </div>
-                <div class="text-center text-secondary mt-2 small image-caption">Low fidelity wireframes used in first prototype</div>
+                <div class="text-center text-secondary mt-2 mb-5 small image-caption">Low fidelity wireframes used in first prototype</div>
+                <p>My study plan aimed to answer these key research questions:</p>
+                <ul>
+                    <li>Is the app intuitive to use?</li>
+                    <li>How easy is it for users to find and add a route to track?</li>
+                    <li>How long does it take users to complete their desired tasks?</li>
+                    <li>Does the app provide a better experience for users than their existing way of finding bus information?</li>
+                    <li>Are there additional opportunities for design changes to further enhance user experience?</li>
+                </ul>
+                <p>To measure the effectiveness of the app designs, I had each participant complete a series of tasks which would then be evaluated against two main KPIs: time on task and conversion rates. As they performed each task, they were encouraged to think aloud and share their thought process. The time of completion of each task was then recorded and the difficulty of the task was rated on a scale from 1 to 3 as follows: </p>
+                <ul class="list-unstyled indent">
+                    <li>1 - Easy to complete</li>
+                    <li>2 - Completed but with some difficulty</li>
+                    <li>3 - Not completed</li>
+                </ul>
+                <p>I had each particpant complete 4 tasks, each corresponding to a defining feature within the app:</p>
+                <ol class="list-gap">
+                    <li>App setup and adding a new route to track</li>
+                    <li>Changing your address</li>
+                    <li>Checking for notifications</li>
+                    <li>Finding contact information</li>
+                </ol>
+                <p>During each task, I took note of my observations and asked follow-up questions like "Was this feature useful? Why or why not?" and "What was easy and what was challenging?"</p>
+                <p>At the end of the study, I gathered feedback and overall impressions from each participant. I also asked the following research wrap up questions:</p>
+                <ul>
+                    <li>At any point during any of the tasks, were you confused or uncertain on how to perform a certain action?</li>
+                    <li>Did you experience anything unexpected as you were navigating through the app?</li>
+                </ul>
+                <h4 class="mt-5">Affinity Diagram</h4>
+                <p>After the study, I analyzed the data I collected and organized similar findings and comments from participants into groups of sticky notes. I wanted to identify patterns from the research to see where users tended to struggle or excel within the app.</p>
+                <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
+                    <img src="nextstop-assets/nextstop-affinity-diagram.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
+                </div>
+                <p>From this exercise, I identified several insights:</p>
+                <ul>
+                    <li>Most users ended up opening the settings screen as they were trying to add a route to their list. This meant the current pop-up for adding routes isn't intuitive enough for users to successfully add a route.</li>
+                    <li>Some users tapped the route bar in the pop-up to add a route. It seems like the addition button isn't an effective indicator for users to add a route.</li>
+                    <li>Some users didn't use the chips to remove filters. Not all users recognized the function of the chips and opted to use the more familiar filter icon instead.</li>
+                </ul>
+                <p>Some of the groupings in the affinity diagram, like the one on "unresponsive welcome page elements", had more to do with missing features in the low-fidelity prototype rather than actual usability issues related to the design of the app. As such, those groupings were given less weight when coming up with design enhancements.</p>
+                <h4 class="mt-5">Recommendations</h4>
+                <p>Based on the insights gathered from the study, I made the following design recommendations:</p>
+                <ul>
+                    <li>Allow the user to add a route not only by tapping the addition button but also by tapping on the route bar option itself to lower the chances of failing to add a route.</li>
+                    <li>Provide flexibility for filtering capabilities, whether by using the chips or the filter icon, to accommodate different user preferences.</li>
+                    <li>Make it easier for users to understand what to do once they set up the app.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hi-fi Prototype -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h2>Hi-fi Prototype</h2>
+                <p>With the insights gathered, I was ready to build a high-fidelity prototype of the NextStop app.</p>
+                <p>Before I started, I needed to determine the colors and various fonts for the app. To ensure that my app remained consistent throughout, I created a style guide that outlined the color palette and typography to be used.</p>
+                <img src="nextstop-assets/nextstop-style-guide.png" alt="NextStop Style Guide" class="img-fluid my-5 shadow-sm d-block mx-auto">
+                <p>Other than the color of school buses being the source of inspiration,I chose yellow and purple as the primary colors for the app as they conveyed youthfulness and energy which I thought was befitting of the school setting.</p>
+                <p>Aesthetics aside, I also needed to ensure the readability of the text. It had to be clearly visible, following WCAG 2.1 standards for 4.5:1 contrast ratio.</p>
+                <h3 class="mt-5">Hi-fi Mockups</h3>
+                <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
+                    <img src="nextstop-assets/nextstop-hi-fi-mockups.png" alt="NextStop Hi-Fi Mockups" style="width: 1800px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
+                </div>
             </div>
         </div>
     </div>
