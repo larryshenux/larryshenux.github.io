@@ -147,7 +147,7 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <h2 class="mb-4">Define</h2>
-                <p>With the journey maps created, I was ready to define the main problems that my app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account as well as the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
+                <p>Having created the journey maps and personas, it was time to define the main problems the app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account as well as the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
                 <h3 class="mt-5">User Stories and Problem Statements</h3>
                 <p>It was interesting for me to see the similarities and differences between the user stories and problem statements. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it more tangible to address.</p>
                 <h4>Tammy</h4>
@@ -218,10 +218,14 @@
                         <li>FAQs</li>
                     </ul>
                 </ul>
-                <p>Once I had a better idea of what the app needed, I was ready to start planning the layout of the app. To do this, I created an information architecture diagram to map out the structure and high-level flow of the app.</p>
+                <p>Once I had a better idea of what the app needed, I started planning the layout of the app. To do this, I created an information architecture diagram to map out the structure and high-level flow of the app.</p>
                 <h3 class="mt-5">IA Diagram</h3>
                 <img src="nextstop-assets/nextstop-ia-diagram.jpg" alt="NextStop Information Architecture Diagram" class="img-fluid my-4 shadow-sm">
-                <p>With the IA diagram as a guide, I was ready to proceed to the next step: sketching out wireframes for the main screens of the app.</p>
+                <p>Using the IA diagram as a guide, I sketched out wireframes for the main screens of the app.</p>
+                <p>Starting off with the welcome screen where users are greeted with a friendly message and prompted to enter their school district and address, the next screen that displays would be the <i>My Routes</i> screen. Here, users can add bus routes for their address and view route information such as arrival times and stop location. When users attempt to add a route, it will direct them to the <i>Route Search</i> screen where they can make their selection. Once a route is selected, they will be taken back to the <i>My Routes</i> screen.</p>
+                <p>The notifications screen will display important updates and alerts for users, such as bus delays, weather updates, or school closures. Users will see an alert bubble pop up on the bottom menu icon to indicate new notifications.</p>
+                <p>The information screen will provide users with contact information for schools in the chosen district and transportation department. FAQs can also be found on this screen.</p>
+                <p>Finally, the app will include a screen where users can submit any concerns or feedback to the district.</p>
                 <h3 class="mt-5">Wireframes</h3>
                 <div id="wireframesCarousel" class="carousel carousel-fade my-5 shadow-sm" data-bs-ride="carousel" data-bs-interval="5000">
                     <div class="carousel-indicators">
@@ -257,18 +261,21 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <p>Initially, I used the hamburger menu in my wireframes, thinking it would be a good way to save space on smaller screens. However, I later realized that this approach might not be the best for discoverability, as users don't immediately see all available options.</p>
+                <p>In my initial designs, I used the hamburger menu in my wireframes, thinking it would be a good way to save space on smaller screens. However, I later realized that this approach might not be the best for discoverability, as users don't immediately see all available options.</p>
                 <p>To address this, I explored using a tabbed navigation pattern as well. I felt that the number of functions my app offered did not warrant the use of a hamburger menu. With a bottom menu, users could easily switch between different sections of the app without having to open and close a menu.</p>
                 <img src="nextstop-assets/bottom-nav-wf.png" alt="Bottom Navigation Wireframe" class="img-fluid my-5 shadow-sm d-block mx-auto">
-                <p>During the wireframing process, I found the "Search Routes" screen to be redundant. The problem was that users already have the option to add routes from the "My Routes" screen, not to mention that they are also inputting their address at the start during the set up of the app. It's unlikely users would want to search for a district they're not zoned for, but in the event they needed to switch districts or addresses, it would make more sense for them to do so in a "Settings" page. Once updated, they will have the option to add routes for their new location on the "My Routes" screen.</p>
+                <p>Also during the wireframing process, I found the "Search Routes" screen to be redundant. The problem was if users are adding routes from the "My Routes" screen, why should they be taken away to a different screen just to perform that task? Why not contain that functionality within the "My Routes" screen?</p>
+                <p>They are already inputting their address at the start during the app setup. It's unlikely users would want to search for a district they're not zoned for, but in the event they needed to switch districts or addresses, it would make more sense for them to do so in a "Settings" page. Once updated, they will have the option to add routes for their new location on the "My Routes" screen.</p>
+                <p>Another thing I realized was that maybe having a "Submit a Concern" screen may not be necessary. If a parent or student had an issue they wanted to bring up, they can reference the contact info from the information screen and submit their concern through the appropriate channels, so the additional screen dedicated for that purpose seemed to be extraneous.</p>
+                <p>With these considerations in mind, I aimed to streamline the user experience and reduce unnecessary screens.</p>
                 <h3 class="mt-5">Usability Study</h3>
-                <p>With the wireframes ready to go, I was ready to test them out with users. I created a simple lo-fi prototype using the completed wireframes and conducted a usability study with 4 participants to identify any usability issues and gather feedback on the functionality of the app.</p>
+                <p>With the wireframes completed, I was ready to test them out with users. I built a simple lo-fi prototype referencing the completed wireframes and conducted a usability study with 4 participants to identify any usability issues and gather feedback on the functionality of the app.</p>
                 <div class="horizontal-scrollbar mt-4" style="width: 100%; max-width: 100%;">
                     <img src="nextstop-assets/nextstop-lofi-wireframes.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
                 </div>
                 <div class="text-center text-secondary mt-2 mb-5 small image-caption">Low fidelity wireframes used in first prototype</div>
                 <p>My study plan aimed to answer these key research questions:</p>
-                <ul>
+                <ul class="mb-5">
                     <li>Is the app intuitive to use?</li>
                     <li>How easy is it for users to find and add a route to track?</li>
                     <li>How long does it take users to complete their desired tasks?</li>
@@ -276,13 +283,13 @@
                     <li>Are there additional opportunities for design changes to further enhance user experience?</li>
                 </ul>
                 <p>To measure the effectiveness of the app designs, I had each participant complete a series of tasks which would then be evaluated against two main KPIs: time on task and conversion rates. As they performed each task, they were encouraged to think aloud and share their thought process. The time of completion of each task was then recorded and the difficulty of the task was rated on a scale from 1 to 3 as follows: </p>
-                <ul class="list-unstyled indent">
+                <ul class="list-unstyled indent mb-5">
                     <li>1 - Easy to complete</li>
                     <li>2 - Completed but with some difficulty</li>
                     <li>3 - Not completed</li>
                 </ul>
-                <p>I had each particpant complete 4 tasks, each corresponding to a defining feature within the app:</p>
-                <ol class="list-gap">
+                <p>I had each participant complete 4 tasks, each corresponding to a defining feature within the app:</p>
+                <ol class="list-gap mb-5">
                     <li>App setup and adding a new route to track</li>
                     <li>Changing your address</li>
                     <li>Checking for notifications</li>
@@ -322,21 +329,26 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <h2>Hi-fi Prototype</h2>
-                <p>With the insights gathered, I was ready to build a high-fidelity prototype of the NextStop app.</p>
-                <p>Before I started, I needed to determine the colors and various fonts for the app. To ensure that my app remained consistent throughout, I created a style guide that outlined the color palette and typography to be used.</p>
+                <p>Having tested the prototype and gathered key insights, I proceeded to building a high-fidelity prototype of the NextStop app.</p>
+                <h3 class="mt-5">Style Guide</h3>
+                <p>Before I started designing anything though, I needed to first determine the colors and various fonts for the app. To ensure that my app remained consistent throughout, I created a style guide that outlined the color palette and typography to be used.</p>
                 <img src="nextstop-assets/nextstop-style-guide.png" alt="NextStop Style Guide" class="img-fluid my-5 shadow-sm d-block mx-auto">
-                <p>Other than the color of school buses being the source of inspiration,I chose yellow and purple as the primary colors for the app as they conveyed youthfulness and energy which I thought was befitting of the school setting.</p>
+                <p>Other than the color of school buses being the source of inspiration, I chose yellow and purple as the primary colors for the app as they conveyed youthfulness and energy which I thought was befitting of the school setting.</p>
                 <p>Aesthetics aside, I also needed to ensure the readability of the text. It had to be clearly visible, following WCAG 2.1 standards for 4.5:1 contrast ratio.</p>
                 <h3 class="mt-5">Hi-fi Mockups</h3>
+                <p>As I designed the mockups in Figma, I created reusable components to maintain consistency across the app. I also leveraged existing design libraries like Google's Material Design components to help speed up the process.</p>
                 <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
-                    <img src="nextstop-assets/nextstop-hi-fi-mockups.png" alt="NextStop Hi-Fi Mockups" style="width: 1800px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
+                    <img src="nextstop-assets/nextstop-hi-fi-mockups.png" alt="NextStop Hi-Fi Mockups" style="width: 1900px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
                 </div>
+                <div class="text-center text-secondary mt-2 mb-5 small image-caption">First iteration of NextStop's hi-fi mockups</div>
+                <p>Once I had completed the mockup, I wired up the interactions across all the screens to build a high-fidelity version of the prototype.</p>
             </div>
         </div>
     </div>
 
     <script src="../utils.js"></script>
     <script src="../animations.js"></script>
+    <script src="../../scripts.js"></script>
     <script src="../../scrion the overall design and fpts.js"></script>
 </body>
 </html>
