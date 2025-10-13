@@ -8,6 +8,7 @@
   overflow-y: hidden;
   scrollbar-gutter: stable both-edges;
 }
+
 /* Highlight for wireframes carousel caption text */
 #wireframesCarousel .carousel-caption h5 span {
   background: rgba(255, 255, 255, 0.8);
@@ -157,6 +158,7 @@
     padding: 1rem 0;
     border: none;
     vertical-align: top;
+    font-size: 1.2rem;
 }
 
 .project-info td:first-child {
