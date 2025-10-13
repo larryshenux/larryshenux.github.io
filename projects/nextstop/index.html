@@ -8,10 +8,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../project-styles.css">
+    <link rel="stylesheet" href="../navigation.css">
     <link rel="stylesheet" href="nextstop-styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#outlineMenu" data-bs-offset="100" tabindex="0">
+    <!-- Floating Navigation -->
+    <button class="floating-nav-button d-lg-none" id="floatingNavBtn">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <!-- Navigation Overlay -->
+    <div class="floating-nav-overlay" id="navOverlay"></div>
+    
+    <!-- Navigation Menu -->
+    <nav id="outlineMenu" class="floating-nav-menu">
+        <div class="nav flex-column">
+            <a class="nav-link" href="#overview">Overview</a>
+            <a class="nav-link" href="#empathize">Empathize</a>
+            <a class="nav-link" href="#define">Define</a>
+            <a class="nav-link" href="#project-takeaways">Project Takeaways</a>
+        </div>
+    </nav>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand bg-body-tertiary">
         <div class="container">
@@ -75,7 +94,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2 class="mb-4">Overview</h2>
+                <h2 id="overview" class="mb-4">Overview</h2>
                 <p>Ever been late for the school bus before? Or worse yet, experience that sinking feeling as your bus turns a corner and drives off right as you come into sight of your bus stop? You knew you were running late, but that didn't stop you from trying. Wouldn't it be nice to have a way of knowing where the bus is at all times?</p>
                 <p>For parents, it's not always easy to find the information you need on transportation, bus stops, bus times, etc. If you're lucky, there might be a convenient link somewhere on your child's school website. But more often than not, you will likely have to dig through the pages or resort to a search to find what you need. Wouldn't it be helpful to have all that information in one place, organized in a structured, easy to use medium?</p>
                 <br>
@@ -88,7 +107,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2 class="mb-4">Empathize</h2>
+                <h2 id="empathize" class="mb-4">Empathize</h2>
                 <p>The first thing I needed to do was to fully understand the problems I had to address. While I knew generally what should be in the bus app, I didn't know the specific pain points and challenges faced by users. With this in mind, I thought of some interview questions I wanted to ask my target audience to better understand their needs.</p>
                 <h3>Questions</h3>
                 <ul>
@@ -146,7 +165,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2 class="mb-4">Define</h2>
+                <h2 id="define" class="mb-4">Define</h2>
                 <p>Having created the journey maps and personas, it was time to define the main problems the app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account as well as the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
                 <h3 class="mt-5">User Stories and Problem Statements</h3>
                 <p>It was interesting for me to see the similarities and differences between the user stories and problem statements. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it tangible to address.</p>
@@ -386,7 +405,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2 class="mb-4">Project Takeaways</h2>
+                <h2 id="project-takeaways" class="mb-4">Project Takeaways</h2>
                 <p>This was a fun project to work on and my first serious attempt taking on a UX project from start to finish. I've learned much throughout the project as I worked at it on and off in my spare time over the course of 2 months.</p>
                 <h3 class="mt-5">Unfinished Business</h3>
                 <p>If I were to continue working on this project, I would want to further explore and test the design of the route map and the overlay elements. Due to time constraints, I had to limit the amount of time I spent on this aspect.</p>
@@ -404,12 +423,13 @@
         <div class="container text-center">
             <a href="#" class="text-decoration-none me-3"><i class="bi bi-arrow-up-short"></i>Back to top</a>
             <span class="text-muted">|</span>
-            <a href="../../index.html" class="text-decoration-none ms-3">Home</a>
+            <a href="../../index.html" class="text-decoration-none ms-3"><i class="bi bi-house"></i> Home</a>
         </div>
     </footer>
 
     <script src="../utils.js"></script>
     <script src="../animations.js"></script>
+    <script src="../navigation.js"></script>
     <script src="../../scripts.js"></script>
 </body>
 </html>
