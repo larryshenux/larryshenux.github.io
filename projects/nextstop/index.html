@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="nextstop-styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#outlineMenu" data-bs-offset="100" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#outlineMenu" data-bs-offset="200" data-bs-method="position" tabindex="0">
     <!-- Floating Navigation -->
     <button class="floating-nav-button d-lg-none" id="floatingNavBtn">
         <i class="bi bi-list"></i>
@@ -25,8 +25,70 @@
     <nav id="outlineMenu" class="floating-nav-menu">
         <div class="nav flex-column">
             <a class="nav-link" href="#overview">Overview</a>
-            <a class="nav-link" href="#empathize">Empathize</a>
-            <a class="nav-link" href="#define">Define</a>
+            <div class="nav-group">
+                <a class="nav-link has-children" href="#empathize">
+                    <span>Empathize</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="nav-children">
+                    <a class="nav-link" href="#questions">Questions</a>
+                    <a class="nav-link" href="#user-journeys">User Journeys</a>
+                </div>
+            </div>
+            <div class="nav-group">
+                <a class="nav-link has-children" href="#define">
+                    <span>Define</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="nav-children">
+                    <a class="nav-link" href="#user-stories">User Stories and Problem Statements</a>
+                    <div class="nav-children">
+                        <a class="nav-link" href="#hypothesis-statements">Hypothesis Statements</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-group">
+                <a class="nav-link has-children" href="#ideate">
+                    <span>Ideate</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="nav-children">
+                    <a class="nav-link" href="#app-requirements">App Requirements</a>
+                    <a class="nav-link" href="#ia-diagram">IA Diagram</a>
+                    <a class="nav-link" href="#wireframes">Wireframes</a>
+                    <div class="nav-group">
+                        <a class="nav-link has-children" href="#usability-study">
+                            <span>Usability Study</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <div class="nav-children">
+                            <a class="nav-link" href="#affinity-diagram">Affinity Diagram</a>
+                            <a class="nav-link" href="#recommendations">Recommendations</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-group">
+                <a class="nav-link has-children" href="#hi-fi-prototype">
+                    <span>Hi-fi Prototype</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="nav-children">
+                    <a class="nav-link" href="#style-guide">Style Guide</a>
+                    <a class="nav-link" href="#hi-fi-mockups">Hi-fi Mockups</a>
+                    <div class="nav-group">
+                        <a class="nav-link has-children" href="#revisions">
+                            <span>Revisions</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <div class="nav-children">
+                            <a class="nav-link" href="#revisiting-add-button">Revisiting the Add Button</a>
+                            <a class="nav-link" href="#redesigning-modal">Redesigning the Add Route Modal</a>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="#interactive-prototype">Interactive Prototype</a>
+                </div>
+            </div>
             <a class="nav-link" href="#project-takeaways">Project Takeaways</a>
         </div>
     </nav>
@@ -108,19 +170,18 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <h2 id="empathize" class="mb-4">Empathize</h2>
-                <p>The first thing I needed to do was to fully understand the problems I had to address. While I knew generally what should be in the bus app, I didn't know the specific pain points and challenges faced by users. With this in mind, I thought of some interview questions I wanted to ask my target audience to better understand their needs.</p>
-                <h3>Questions</h3>
+                <p>The first thing I needed to do was to fully understand the problems I had to address. While I had an idea as to what people might want, I didn't know the specific pain points and challenges faced by users. With this in mind, I thought of some interview questions I wanted to ask my target audience to better understand their needs.</p>
+                <h3 id="questions">Questions</h3>
                 <ul>
                     <li>Where do you currently get bus route information?</li>
-                    <li>Are you satisfied with the way you get this information and of the information itself?</li>
+                    <li>Are you satisfied with the way you get this information and the usefulness of the information itself?</li>
                         <ul>
                             <li>If not, what are some things that you find lacking/frustrating about the process?</li>
                         </ul>
                     <li>What are some things that would make it easier for you to find this information?</li>
                     <li>What features would you find most useful in a bus information app?</li>
-                    <li>Are there any additional things that could be added to the bus route information that could prove useful for you?</li>
                 </ul>
-                <p>I interviewed 2 parents and 1 student for this part. During the interview, I realized that being able to ask great follow-up questions is a crucial skill for uncovering deeper insights. Even though I had prepared questions in advance, I never really knew what responses I would get from my interviewees. Being adaptable and quick to jump on key points would help me get a clearer picture of the problem and allow me to create more accurate personas.</p>
+                <p>I interviewed 2 parents and 1 student for this part. During the interview, I realized that being able to ask great follow-up questions is a crucial skill for uncovering deeper insights. Even though I had prepared questions in advance, sometimes the responses I ended up getting from my interviewees were not what I expected. Being adaptable and quick to jump on key points helped me get a clearer picture of the problem and create more accurate personas.</p>
                 <div id="personasCarousel" class="carousel slide my-5" data-bs-ride="carousel" data-bs-interval="12000">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#personasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -147,8 +208,8 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <h3 class="mt-4">User Journeys</h3>
-            <p>Once I had defined user personas, I created two user journey maps for the current flow they take to find bus route information or to receive bus updates, helping me understand their pain points and behaviors from their perspective.</p>
+            <h3 id="user-journeys" class="mt-4">User Journeys</h3>
+            <p>Once I had defined user personas, I created two user journey maps for the current flow being taken to find bus route information or to receive bus updates, helping me understand their pain points and behaviors from their perspective.</p>
 
             <!-- User Journey Maps -->
             <div class="my-5">
@@ -166,10 +227,10 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <h2 id="define" class="mb-4">Define</h2>
-                <p>Having created the journey maps and personas, it was time to define the main problems the app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account as well as the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
-                <h3 class="mt-5">User Stories and Problem Statements</h3>
-                <p>It was interesting for me to see the similarities and differences between the user stories and problem statements. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it tangible to address.</p>
-                <h4>Tammy</h4>
+                <p>Having created the journey maps and personas, it was time to define the main problems the app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account along with the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
+                <h3 id="user-stories" class="mt-5">User Stories and Problem Statements</h3>
+                <p>It was interesting for me to see and compare the user stories and problem statements side-by-side. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it tangible to address.</p>
+                <h4 id="tammy">Tammy</h4>
                 <table class="content-table indent">
                 <tr>
                     <td>User Story</td>
@@ -177,21 +238,21 @@
                 </tr>
                 <tr>
                     <td>Problem Statement</td>
-                    <td>Tammy is a busy mother who needs a quick and convenient way of accessing bus information because it will save her from having to spend extra mental bandwidth scouring for that information.</td>
+                    <td>Tammy is a busy mother who needs a quick and convenient way of accessing bus information because it will save her the extra mental bandwidth needed to scour for it.</td>
                 </tr>
                 </table>
-                <h4>Billy</h4>
+                <h4 id="billy">Billy</h4>
                 <table class="content-table indent">
                 <tr>
                     <td>User Story</td>
-                    <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to feel at ease when I'm waiting at the bus stop.</td>
+                    <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to be better prepared when I'm waiting at the bus stop.</td>
                 </tr>
                 <tr>
                     <td>Problem Statement</td>
                     <td>Billy is a student who needs real-time updates on bus status so he can plan his arrival at the bus stop and avoid unnecessary waiting or missed buses.</td>
                 </tr>
                 </table>
-                <h4>Janet</h4>
+                <h4 id="janet">Janet</h4>
                 <table class="content-table indent">
                 <tr>
                     <td>User Story</td>
@@ -202,7 +263,7 @@
                     <td>Janet needs a user-friendly bus information app because a complicated interface makes it difficult for her to find the information she needs in a timely manner.</td>
                 </tr>
                 </table>
-                <h4>Hypothesis Statements</h4>
+                <h4 id="hypothesis-statements">Hypothesis Statements</h4>
                 <p>Based on the user stories and problem statements, I came up with the following hypotheses:</p>
                 <ol class="text-secondary fst-italic">
                     <li>If Tammy can get bus information from an app designed specifically for that purpose, all the information she needs will be contained in one place, ensuring her convenience.</li>
@@ -210,7 +271,7 @@
                     <li>If Janet can use an app with minimal elements and a familiar layout, it would greatly improve her experience of finding the bus information she needs.</li>
                 </ol>
                 <p>Through these hypothesis statements, I determined the focus for my app, summarized into one value proposition:</p>
-                <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#ffc107" data-base-color="#fef095"><strong>NextStop</strong> provides a <i>streamlined experience</i> for parents and students to get the bus information they need at their fingertips. It sports an intuitive interface and added features like <i>bus location tracking</i> and <i>estimated arrival times</i> so that no one will be in the dark about their bus's whereabouts.</p>
+                <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#ffc107" data-base-color="#fef095"><strong>NextStop</strong> provides a <i>streamlined experience</i> for parents and students to get the bus information they need at their fingertips. It provides a simple, easy to use interface, and added features like <i>bus location tracking</i> and <i>estimated arrival times</i> so that no one will be in the dark about their bus's whereabouts.</p>
             </div>
         </div>
     </div>
@@ -219,9 +280,9 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2>Ideate</h2>
-                <p>Now that I had a clear idea of the problems I'm solving for, I needed to list out the core app requirements that would address them. Having a list of must have features ready as I start sketching out potential designs will help ensure that I don't forget any important features.</p>
-                <h3 class="mt-5">App Requirements</h3>
+                <h2 id="ideate">Ideate</h2>
+                <p>Now that I had a clear idea of the problems I'm solving for, I needed to list out the core app requirements that would address them. Having a list of must have features ready as I start sketching out potential designs will help ensure that I don't forget anything important.</p>
+                <h3 id="app-requirements" class="mt-5">App Requirements</h3>
                 <ul>
                     <li>Map of routes with live bus tracking</li>
                     <ul>
@@ -238,14 +299,14 @@
                     </ul>
                 </ul>
                 <p>Once I had a better idea of what the app needed, I started planning the layout of the app. To do this, I created an information architecture diagram to map out the structure and high-level flow of the app.</p>
-                <h3 class="mt-5">IA Diagram</h3>
+                <h3 id="ia-diagram" class="mt-5">IA Diagram</h3>
                 <img src="nextstop-assets/nextstop-ia-diagram.jpg" alt="NextStop Information Architecture Diagram" class="img-fluid my-4 shadow">
                 <p>Using the IA diagram as a guide, I sketched out wireframes for the main screens of the app.</p>
-                <p>Starting off with the welcome screen where users are greeted with a friendly message and prompted to enter their school district and address, the next screen that displays would be the <i>My Routes</i> screen. Here, users can add bus routes for their address and view route information such as arrival times and stop location. When users attempt to add a route, it will direct them to the <i>Route Search</i> screen where they can make their selection. Once a route is selected, they will be taken back to the <i>My Routes</i> screen.</p>
+                <p>Starting off with the welcome screen where users are greeted with a friendly message and prompted to enter their school district and address, the next screen that displays would be the <i>My Routes</i> screen. Here, users can add bus routes for their address and view route information such as arrival times and stop location. When users attempt to add a route, it will direct them to the <i>Route Search</i> screen where they can make their selection. Once a route is selected, they will be taken back to the My Routes screen.</p>
                 <p>The notifications screen will display important updates and alerts for users, such as bus delays, weather updates, or school closures. Users will see an alert bubble pop up on the bottom menu icon to indicate new notifications.</p>
                 <p>The information screen will provide users with contact information for schools in the chosen district and transportation department. FAQs can also be found on this screen.</p>
                 <p>Finally, the app will include a screen where users can submit any concerns or feedback to the district.</p>
-                <h3 class="mt-5">Wireframes</h3>
+                <h3 id="wireframes" class="mt-5">Wireframes</h3>
                 <div id="wireframesCarousel" class="carousel carousel-fade my-5 shadow-sm" data-bs-ride="carousel" data-bs-interval="5000">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -281,14 +342,14 @@
                     </button>
                 </div>
                 <p>In my initial designs, I used the hamburger menu in my wireframes, thinking it would be a good way to save space on smaller screens. However, I later realized that this approach might not be the best for discoverability, as users don't immediately see all available options.</p>
-                <p>To address this, I explored using a tabbed navigation pattern as well. I felt that the number of functions my app offered did not warrant the use of a hamburger menu. With a bottom menu, users could easily switch between different sections of the app without having to open and close a menu.</p>
+                <p>To address this, I explored using a tabbed navigation pattern as well. In the end, I felt that the number of functions my app offered did not warrant the use of a hamburger menu, and with a bottom menu, users could easily switch between different sections of the app without having to open and close a menu.</p>
                 <img src="nextstop-assets/bottom-nav-wf.png" alt="Bottom Navigation Wireframe" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>Also during the wireframing process, I found the "Search Routes" screen to be redundant. The problem was if users are adding routes from the "My Routes" screen, why should they be taken away to a different screen just to perform that task? Why not contain that functionality within the "My Routes" screen?</p>
-                <p>They are already inputting their address at the start during the app setup. It's unlikely users would want to search for a district they're not zoned for, but in the event they needed to switch districts or addresses, it would make more sense for them to do so in a "Settings" page. Once updated, they will have the option to add routes for their new location on the "My Routes" screen.</p>
-                <p>Another thing I realized was that maybe having a "Submit a Concern" screen may not be necessary. If a parent or student had an issue they wanted to bring up, they can reference the contact info from the information screen and submit their concern through the appropriate channels, so the additional screen dedicated for that purpose seemed to be extraneous.</p>
+                <p>Also during the wireframing process, I found the Search Routes screen to be redundant. The problem was if users are adding routes from the My Routes screen, why should they be taken away to a different screen just to perform that task? Why not contain that functionality within the My Routes screen?</p>
+                <p>Users are already inputting their address at the start during app setup. It's unlikely users would want to search for a district they're not zoned for, but in the event they needed to switch districts or addresses, it would make more sense for them to do so in a "Settings" page. Once updated, they will have the option to add routes for their new location on the My Routes screen.</p>
+                <p>Another thing I realized was that maybe having a "Submit a Concern" screen may not be necessary. If a parent or student had an issue they wanted to bring up, they can reference the contact info from the information screen and submit their concern through the appropriate channels, so the additional screen dedicated for that purpose seemed extraneous.</p>
                 <p>With these considerations in mind, I aimed to streamline the user experience and reduce unnecessary screens.</p>
-                <h3 class="mt-5">Usability Study</h3>
-                <p>With the wireframes completed, I was ready to test them out with users. I built a simple lo-fi prototype referencing the completed wireframes and conducted a usability study with 4 participants to identify any usability issues and gather feedback on the functionality of the app.</p>
+                <h3 id="usability-study" class="mt-5">Usability Study</h3>
+                <p>After I completed the wireframes, I was ready to test them out with users. I built a simple lo-fi prototype referencing the completed wireframes and conducted a usability study with 4 participants to identify any usability issues and gather feedback on the functionality of the app.</p>
                 <div class="horizontal-scrollbar mt-4" style="width: 100%; max-width: 100%;">
                     <img src="nextstop-assets/nextstop-lofi-wireframes.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
                 </div>
@@ -301,7 +362,7 @@
                     <li>Does the app provide a better experience for users than their existing way of finding bus information?</li>
                     <li>What are some other opportunities for design changes to further enhance user experience?</li>
                 </ul>
-                <p>To measure the effectiveness of the app designs, I had each participant complete a series of tasks which would then be evaluated against two main KPIs: time on task and conversion rates. As they performed each task, they were encouraged to think aloud and share their thought process. The time of completion of each task was then recorded and the difficulty of the task was rated on a scale from 1 to 3 as follows: </p>
+                <p>To measure the effectiveness of the app designs, I had each participant complete a series of tasks which would then be evaluated against two main KPIs: time on task and conversion rates. As they performed each task, they were encouraged to think aloud and share their thought process. The time of completion on each task was then recorded and the difficulty of the task was rated on a scale from 1 to 3 as follows: </p>
                 <ul class="list-unstyled indent mb-5">
                     <li>1 - Easy to complete</li>
                     <li>2 - Completed but with some difficulty</li>
@@ -315,12 +376,12 @@
                     <li>Finding contact information</li>
                 </ol>
                 <p>During each task, I took note of my observations and asked follow-up questions like "Was this feature useful? Why or why not?" and "What was easy and what was challenging?"</p>
-                <p>At the end of the study, I gathered feedback and overall impressions from each participant. I also asked the following research wrap up questions:</p>
+                <p>At the end of the study, I gathered feedback and overall impressions from each participant. I also asked the following questions to wrap up the research study:</p>
                 <ul>
                     <li>At any point during any of the tasks, were you confused or uncertain on how to perform a certain action?</li>
                     <li>Did you experience anything unexpected as you were navigating through the app?</li>
                 </ul>
-                <h4 class="mt-5">Affinity Diagram</h4>
+                <h4 id="affinity-diagram" class="mt-5">Affinity Diagram</h4>
                 <p>After the study, I analyzed the data I collected and organized similar findings and comments from participants into groups of sticky notes. I wanted to identify patterns from the research to see where users tended to struggle or excel within the app.</p>
                 <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
                     <img src="nextstop-assets/nextstop-affinity-diagram.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
@@ -329,10 +390,10 @@
                 <ul>
                     <li>Most users ended up opening the settings screen as they were trying to add a route to their list. This meant the current pop-up for adding routes isn't intuitive enough for users to successfully add a route.</li>
                     <li>Some users tapped the route bar in the pop-up to add a route. It seems like the addition button isn't an effective indicator for users to add a route.</li>
-                    <li>Some users didn't use the chips to remove filters. Not all users recognized the function of the chips and opted to use the more familiar filter icon instead.</li>
+                    <li>Some users didn't use the chips to remove filters. Not all users recognized the function of filter chips and opted to use the more familiar filter icon instead.</li>
                 </ul>
                 <p>Some of the groupings in the affinity diagram, like the one on "unresponsive welcome page elements", had more to do with missing features in the low-fidelity prototype rather than actual usability issues related to the design of the app. As such, those groupings were given less weight when deliberating design enhancements.</p>
-                <h4 class="mt-5">Recommendations</h4>
+                <h4 id="recommendations" class="mt-5">Recommendations</h4>
                 <p>Based on the insights gathered from the study, I made the following design recommendations:</p>
                 <ul>
                     <li>Allow the user to add a route not only by tapping the addition button but also by tapping on the route bar option itself to lower the chances of failing to add a route.</li>
@@ -347,53 +408,53 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2>Hi-fi Prototype</h2>
-                <p>Having tested the prototype and gathered key insights, I proceeded to building a high-fidelity prototype of the NextStop app.</p>
-                <h3 class="mt-5">Style Guide</h3>
+                <h2 id="hi-fi-prototype">Hi-fi Prototype</h2>
+                <p>Having tested the prototype and gathered key insights, I proceeded to build a high-fidelity prototype of the NextStop app.</p>
+                <h3 id="style-guide" class="mt-5">Style Guide</h3>
                 <p>Before I started designing anything though, I needed to first determine the colors and various fonts for the app. To ensure that my app remained consistent throughout, I created a style guide that outlined the color palette and typography to be used.</p>
                 <img src="nextstop-assets/nextstop-style-guide.png" alt="NextStop Style Guide" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>Other than the color of school buses being the source of inspiration, I chose yellow and purple as the primary colors for the app as they conveyed youthfulness and energy which I thought was befitting of the school setting.</p>
-                <p>Aesthetics aside, I also needed to ensure the readability of the text. It had to be clearly visible, following WCAG 2.1 standards for 4.5:1 contrast ratio.</p>
-                <h3 class="mt-5">Hi-fi Mockups</h3>
+                <p>For app color inspiration, other than the color of school buses being yellow, I chose yellow and purple as the primary colors for the app as they conveyed youthfulness and energy which I thought was befitting of the school setting.</p>
+                <p>Aesthetics aside, I also needed to ensure the readability of the text. It had to be clearly visible, following WCAG 2.1 AA standards for 4.5:1 contrast ratio.</p>
+                <h3 id="hi-fi-mockups" class="mt-5">Hi-fi Mockups</h3>
                 <p>As I designed the mockups in Figma, I created reusable components to maintain consistency across the app. I also leveraged existing design libraries like Google's Material Design components to help speed up the process.</p>
                 <p>Once I had completed the mockup, I wired up the interactions across all the screens to construct a high-fidelity version of the prototype to present to stakeholders.</p>
                 <div class="horizontal-scrollbar mt-5 mb-2" style="width: 100%; max-width: 100%;">
                     <img src="nextstop-assets/nextstop-hi-fi-mockups.png" alt="NextStop Hi-Fi Mockups" style="width: 1900px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
                 </div>
                 <div class="text-center text-secondary mt-2 mb-5 small image-caption">First iteration of NextStop's hi-fi mockups</div>
-                <h3>Revisions</h3>
-                <p>Having presented the mockups to interested parties, I gathered feedback and made several revisions to improve the design.</p>
-                <h4 class="mt-5">Revisiting the Add Button</h4>
+                <h3 id="revisions">Revisions</h3>
+                <p>After I had presented the mockups to interested parties, I gathered feedback and made several revisions to improve the design.</p>
+                <h4 id="revisiting-add-button" class="mt-5">Revisiting the Add Button</h4>
                 <p>There were two things about the add button I had to address in this revision. The first was the location of the button. The initial design was a floating action button located in the bottom right corner of the screen. While this is a commonly used pattern, it wasn't the most intuitive location for users to find it.</p>
                 <p>One of the comments on the affinity diagram mentioned the following:</p>
                 <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#5bc0de" data-base-color="#d1f3fa">"I think it would be helpful to have a tutorial at the start so I understand what I'm doing."</p>
                 <p>My initial solution to this was to keep the location of the button, but draw the user's attention to the add button with an arrow animation that appears after a few seconds from the moment the user navigates to the My Routes screen.</p>
                 <img src="nextstop-assets/nextstop-animation.gif" alt="NextStop Add Route Animation" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>I didn't consider the possibility of moving the button to a more discoverable location but rather focused on enhancing its visibility in the original spot. I had thought that if I moved the button to the center, the tradeoff would be the button also moving with the contents in the screen as they expand or contract. On the other hand, keeping it in the original position meant it would always be in view in the same spot.</p>
-                <p>However, once I went back to the drawing board and implemented this design, I found that it actually fit the screen quite well. If moving the button to the center aids discoverability, I would rather go with this solution as it addresses the root problem of unintuitive action items on the screen rather than applying a band-aid fix to an existing design.</p>
+                <p>I didn't consider the possibility of moving the button to a more discoverable location but rather focused on enhancing its visibility in its original spot. I had thought that if I moved the button to the center, the tradeoff would be the button also moving with the contents in the screen as they expand or contract, making its position inconsistent. On the other hand, keeping it in the original position meant it would always be in view in the same spot.</p>
+                <p>However, once I went back to the drawing board and implemented this design, I found that it actually fit the screen quite well. If moving the button to the center aids discoverability, I would rather go with this solution and take the minor drawback of a non-fixed location as it addresses the root problem of unintuitive action items on the screen rather than applying a band-aid fix to an existing design.</p>
                 <img src="nextstop-assets/nextstop-revised-add-button.png" alt="NextStop Revised Add Button" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>The second issue I had to address was the dual functionality of the "add" button once a route had been added. In the original design, the button would transform into a plus/minus button, signaling to the user that they could also remove routes if they pressed that button. When pressed, it would open a add/remove route modal where the previously added route would display a minus button which the user can tap and remove the route from their list.</p>
+                <p>The second issue I wanted to address was the dual functionality of the "add" button once a route had been added. In the original design, the button would transform into a plus/minus button, signaling to the user that they could also remove routes if they pressed that button. When pressed, it would open a add/remove route modal where the previously added route would display a minus button which the user can tap and remove the route from their list.</p>
                 <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
                     <img src="nextstop-assets/nextstop-add-minus-before.png" alt="NextStop Add/Minus Before" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
                 </div>
                 <p>The issue here is the inconsistency of the button's behavior. While there isn't much problem functionally, it is better to limit this where possible to avoid potential confusion for the user. This can be accomplished by restricting the button's functionality to a single action- the addition of routes.</p>
-                <p>One solution that I had thought of while I was designing the first hi-fi mockup was to include a trash can icon on the rightmost side of the route card. Users could delete their route by tapping on this icon and they could do so without having to navigate to another subscreen. But I didn't want the user to accidentally remove a route, and I thought adding a confirmation screen wouldn't be much different than having the user go through the existing flow as that also opened a modal.</p>
+                <p>Back when I was designing the first hi-fi mockup, I did consider this problem and thought about including a trash can icon on the rightmost side of the route card. Users could delete their route by tapping on this icon and they could do so without having to navigate to another subscreen. But I didn't want the user to accidentally remove a route, and I thought adding a confirmation screen to address that wouldn't be much different than having the user go through the existing flow as that also opened a modal.</p>
                 <img src="nextstop-assets/nextstop-delete-trashcan.png" alt="NextStop Delete Trash Can" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>Something I had overlooked though in my prior assessment was that reusing a common design pattern such as the trash can icon could help users quickly recognize how they can remove a route. As for the confirmation modal, it's just another standard pattern that users are likely familiar with, not contributing much more complexity to the overall design of the screen.</p>
+                <p>Something I had overlooked though in my prior assessment was that reusing a common design pattern such as the trash can icon could help users quickly recognize how they can remove a route. As for the confirmation modal, it is also another standard pattern that users are likely familiar with, not contributing much more complexity to the overall design of the screen.</p>
                 <p>And like how it was with trying out the new add button design, I found that when I tried implementing the trash can icon and modal confirmation flow, it actually made more sense to me and seemed to be an improvement over the old design.</p>
-                <h4 class="mt-5">Redesigning the Add Route Modal</h4>
-                <p>The add route modal that appears when the user attempts to add a route also had a few problems of its own. The overarching issue was how the routes were presented. All the routes being the same color, for example, even for ones which are unavailable for the users to add, contributes to added cognitive complexity for users navigating the screen.</p>
+                <h4 id="redesigning-modal" class="mt-5">Redesigning the Add Route Modal</h4>
+                <p>The add route modal that appears when the user attempts to add a route also had a few problems of its own. The overarching issue was with how the routes were presented. All the routes being the same color, for example, even for ones which are unavailable for users to add, contributes to added cognitive complexity when navigating the screen.</p>
                 <img src="nextstop-assets/nextstop-original-modal.png" alt="NextStop Original Modal" class="img-fluid my-5 shadow d-block mx-auto">
                 <p>In the original design, the distinguishing element for an addable route was the presence of a dark gray plus sign. Routes that could not be added had a disabled light gray plus sign. In addition to this, there was a tiny description that also mentioned the availability of a route.</p>
-                <p>However, the reality is users don't try to read or pay attention to every detail present when they can avoid it. Users tend to find the quickest way to accomplish their task, and it is my job as a designer to make it as easy as possible for them to do what they need to do.</p>
-                <p>In this case, I can do 2 things to help my users quickly understand what they see and find the correct corresponding action to what they want to do:</p>
+                <p>However, the reality is users don't try to read or pay attention to every detail present when they can avoid it. Instead, they tend to find the quickest way to accomplish their task, and it is my job as a designer to make it as quick and easy as possible for them to do what they need to do.</p>
+                <p>In this case, I can do 2 things to help my users quickly understand what they see and find the correct corresponding action:</p>
                 <ol class="list-gap">
                     <li>Make the available routes visually distinct from the unavailable ones</li>
                     <li>Separate the available routes from the unavailable ones</li>
                 </ol>
                 <img src="nextstop-assets/nextstop-redesigned-modal.png" alt="NextStop Redesigned Modal" class="img-fluid my-5 shadow d-block mx-auto">
                 <p>Upon making the change, I can see that the available routes are now more prominent and easier to identify, while the unavailable routes are clearly separated and less distracting. This should help users quickly find the routes they can add without having to evaluate each route option one by one.</p>
-                <h3 class="mt-5 mb-4">Interactive Prototype</h3>
+                <h3 id="interactive-prototype" class="mt-5 mb-4">Interactive Prototype</h3>
                 <div class="d-flex justify-content-center">
                     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="600" src="https://embed.figma.com/proto/M8AZR1kBB2Qv4zblaYKUoc/NextStop?node-id=76-1039&p=f&scaling=scale-down&content-scaling=fixed&page-id=75%3A28&starting-point-node-id=76%3A1039&embed-host=share" allowfullscreen></iframe>
                 </div>
@@ -407,13 +468,13 @@
             <div class="col-8">
                 <h2 id="project-takeaways" class="mb-4">Project Takeaways</h2>
                 <p>This was a fun project to work on and my first serious attempt taking on a UX project from start to finish. I've learned much throughout the project as I worked at it on and off in my spare time over the course of 2 months.</p>
-                <h3 class="mt-5">Unfinished Business</h3>
+                <h3 id="unfinished-business" class="mt-5">Unfinished Business</h3>
                 <p>If I were to continue working on this project, I would want to further explore and test the design of the route map and the overlay elements. Due to time constraints, I had to limit the amount of time I spent on this aspect.</p>
                 <p>Another thing I would want to look into is how I can enhance the route cards in the My Routes screen. I'm not 100% satisfied with how they currently look and function, and I believe there is still plenty of room for improvement. With more cycles of design and user testing, I could arrive at a more polished solution.</p>
-                <h3 class="mt-5">Retrospective</h3>
+                <h3 id="retrospective" class="mt-5">Retrospective</h3>
                 <p>Through this project, I found out how crucial asking the right questions during the research phase is to understand the right problems to solve. If this part isn't done right, the entire premise of the project falls apart.</p>
                 <p>I also learned the importance of user research and user feedback and how initial assumptions could be challenged during testing.</p>
-                <p>With the feedback and insights obtained, the designs are then refined, tested, and evaluated again, and in this way the product continues to evolve and improve over time.</p>
+                <p>With the feedback and insights obtained, the designs can then be refined, tested, and evaluated again, and in this way the product continues to evolve and improve over time.</p>
             </div>
         </div>
     </div>

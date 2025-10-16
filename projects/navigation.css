@@ -7,14 +7,14 @@
   height: 50px;
   border-radius: 50%;
   background-color: var(--bs-primary);
-  color: white;
+  color: var(--bs-body-bg);
   border: none;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1040;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   opacity: 0;
   pointer-events: none;
 }
@@ -34,29 +34,45 @@
   display: none;
 }
 
-.floating-nav-menu {
+#outlineMenu.floating-nav-menu {
   position: fixed;
   right: 20px;
   top: 170px;
   width: 250px;
-  background-color: white;
+  background-color: var(--bs-body-bg);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   z-index: 1040;
   padding: 1rem 0;
   display: none;
-  transition: opacity 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   opacity: 0;
-  pointer-events: none;
+  max-height: 400px;
+  overflow-y: auto;
+  transform: translateX(20px);
 }
 
-.floating-nav-menu .nav-link {
+#outlineMenu.floating-nav-menu.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (min-width: 992px) {
+  #outlineMenu.floating-nav-menu {
+    display: block;
+  }
+}
+
+#outlineMenu.floating-nav-menu .nav-link {
   padding: 0.75rem 1.25rem;
   color: var(--bs-body-color);
-  transition: all 0.2s;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  text-decoration: none;
+  display: block;
+  width: 100%;
 }
 
-.floating-nav-menu .nav-link.active {
+#outlineMenu.floating-nav-menu .nav-link.active {
   background-color: var(--bs-primary-bg-subtle);
   color: var(--bs-primary);
   font-weight: 500;
@@ -64,5 +80,105 @@
 
 @media (min-width: 992px) {
   .floating-nav-button { display: none; }
-  .floating-nav-menu { display: block; }
+  #outlineMenu.floating-nav-menu { 
+    display: block;
+    pointer-events: auto;
+  }
+}
+
+/* Dark theme adjustments */
+[data-bs-theme="dark"] #outlineMenu.floating-nav-menu {
+  background-color: var(--bs-body-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border: 1px solid var(--bs-dark-border-subtle);
+}
+
+[data-bs-theme="dark"] #outlineMenu.floating-nav-menu .nav-link {
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] #outlineMenu.floating-nav-menu .nav-link:hover {
+  background-color: var(--bs-dark-bg-subtle);
+}
+
+[data-bs-theme="dark"] #outlineMenu.floating-nav-menu .nav-link.active {
+  background-color: var(--bs-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+[data-bs-theme="dark"] .floating-nav-overlay {
+  background-color: rgba(0,0,0,0.7);
+}
+
+[data-bs-theme="dark"] .floating-nav-button {
+  background-color: var(--bs-primary);
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Nested Navigation Styles */
+#outlineMenu .nav-group {
+  position: relative;
+}
+
+#outlineMenu .nav-children {
+  display: none;
+  padding-left: 1rem;
+}
+
+#outlineMenu .nav-children .nav-link {
+  font-size: 0.9em;
+}
+
+#outlineMenu .nav-children .nav-children .nav-link {
+  font-size: 0.81em;
+}
+
+#outlineMenu .nav-children .nav-children .nav-children .nav-link {
+  font-size: 0.729em;
+}
+
+#outlineMenu .has-children {
+  position: relative;
+  padding-right: 2rem;
+}
+
+#outlineMenu .has-children i {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  font-size: 0.875em;
+}
+
+#outlineMenu .has-children.expanded i {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+#outlineMenu .nav-group.expanded > .nav-children {
+  display: block;
+}
+
+/* Scrollbar Styling */
+#outlineMenu.floating-nav-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+#outlineMenu.floating-nav-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#outlineMenu.floating-nav-menu::-webkit-scrollbar-thumb {
+  background-color: var(--bs-gray-300);
+  border-radius: 3px;
+}
+
+[data-bs-theme="dark"] #outlineMenu.floating-nav-menu::-webkit-scrollbar-thumb {
+  background-color: var(--bs-gray-600);
+}
+
+[data-bs-theme="dark"] .floating-nav-button:hover {
+  background-color: var(--bs-primary-border-subtle);
 }
