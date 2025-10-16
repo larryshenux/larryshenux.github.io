@@ -45,6 +45,27 @@ document.addEventListener('DOMContentLoaded', function() {
     if (titleSection) visibilityObserver.observe(titleSection);
     if (overviewSection) visibilityObserver.observe(overviewSection);
 
+    // Check initial scroll position
+    function checkInitialScrollPosition() {
+        if (!titleSection || !overviewSection) return;
+        
+        const titleRect = titleSection.getBoundingClientRect();
+        const overviewRect = overviewSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        // Check if title is not visible (above viewport)
+        isTitleVisible = titleRect.top >= -titleRect.height && titleRect.bottom <= viewportHeight;
+        
+        // Check if we've passed overview (it's above the viewport or partially visible)
+        hasPassedOverview = overviewRect.top <= viewportHeight * 0.5;
+        
+        // Update menu visibility based on initial position
+        setMenuVisibility(hasPassedOverview && !isTitleVisible);
+    }
+
+    // Run initial check after a short delay to ensure accurate positions
+    setTimeout(checkInitialScrollPosition, 100);
+
     function setMenuVisibility(show) {
         isMenuVisible = show;
         requestAnimationFrame(() => {
