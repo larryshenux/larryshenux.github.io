@@ -11,10 +11,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Simple state
-    let isMenuVisible = window.innerWidth >= 992;
+    let isMenuVisible = false; // Start with menu hidden
     let scrollSpyInstance;
     let lastActiveSection = null;
     let manuallyExpandedGroups = new Set();
+
+    // Create observer for title and overview sections
+    let isTitleVisible = true; // Start with title assumed visible
+    let hasPassedOverview = false; // Track if we've passed the overview section
+    
+    const visibilityObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.target.id === 'title') {
+                isTitleVisible = entry.isIntersecting;
+            } else if (entry.target.id === 'overview') {
+                // Once we see overview and it's intersecting, we've passed it
+                if (entry.isIntersecting) {
+                    hasPassedOverview = true;
+                }
+            }
+            
+            // Show menu if we've passed overview section AND title is not visible
+            setMenuVisibility(hasPassedOverview && !isTitleVisible);
+        });
+    }, {
+        threshold: [0, 0.2], // Track both entering and exiting
+        rootMargin: '-10% 0px -10% 0px' // Add some margin to make transitions smoother
+    });
+
+    // Observe title and overview sections
+    const titleSection = document.getElementById('title');
+    const overviewSection = document.getElementById('overview');
+    if (titleSection) visibilityObserver.observe(titleSection);
+    if (overviewSection) visibilityObserver.observe(overviewSection);
+
+    function setMenuVisibility(show) {
+        isMenuVisible = show;
+        requestAnimationFrame(() => {
+            navMenu.style.opacity = show ? '1' : '0';
+            navMenu.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
+            navMenu.style.pointerEvents = show ? 'auto' : 'none';
+            navButton.style.opacity = show ? '1' : '0';
+            navButton.style.pointerEvents = show ? 'auto' : 'none';
+        });
+    }
 
     // Initialize scrollspy with optimized settings
     function initScrollSpy() {
@@ -84,21 +124,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navigation visibility and menu toggle
     function toggleMenu(show) {
         const isMobile = window.innerWidth < 992;
-        isMenuVisible = show !== undefined ? show : !isMenuVisible;
+        const menuShouldBeVisible = show !== undefined ? show : !isMenuVisible;
+
+        // Don't allow showing the menu if we're in the title section
+        if (menuShouldBeVisible && !isMenuVisible) return;
 
         if (isMobile) {
-            navMenu.style.display = isMenuVisible ? 'block' : 'none';
-            navOverlay.style.display = isMenuVisible ? 'block' : 'none';
-            body.classList.toggle('no-scroll', isMenuVisible);
+            navMenu.style.display = menuShouldBeVisible ? 'block' : 'none';
+            navOverlay.style.display = menuShouldBeVisible ? 'block' : 'none';
+            body.classList.toggle('no-scroll', menuShouldBeVisible);
         } else {
-            navMenu.style.display = 'block';
+            navMenu.style.display = isMenuVisible ? 'block' : 'none';
             navOverlay.style.display = 'none';
             body.classList.remove('no-scroll');
         }
 
         requestAnimationFrame(() => {
-            navMenu.style.opacity = isMenuVisible ? '1' : '0';
-            navMenu.style.pointerEvents = isMenuVisible ? 'auto' : 'none';
+            navMenu.style.opacity = menuShouldBeVisible ? '1' : '0';
+            navMenu.style.pointerEvents = menuShouldBeVisible ? 'auto' : 'none';
         });
     }
 
@@ -120,32 +163,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!hasActiveItems) return;
 
         const currentActiveLink = activeLinks[activeLinks.length - 1];
-        const currentTopLevelSection = currentActiveLink.closest('.nav-group[data-section-level="1"]');
-
-        // Handle section transitions
-        if (currentTopLevelSection !== lastActiveSection) {
-            if (lastActiveSection && !currentTopLevelSection?.contains(lastActiveSection)) {
-                const oldGroups = lastActiveSection.querySelectorAll('.nav-group.expanded');
-                oldGroups.forEach(group => {
-                    if (!currentActiveLink.closest('.nav-group')?.contains(group) &&
-                        !manuallyExpandedGroups.has(group)) {
-                        toggleDropdown(group, false);
-                    }
-                });
+        
+        // Only update the active link styles, don't auto-expand dropdowns
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            if (link === currentActiveLink) {
+                link.classList.add('active');
+            } else if (!manuallyExpandedGroups.has(link.closest('.nav-group'))) {
+                link.classList.remove('active');
             }
-            lastActiveSection = currentTopLevelSection;
-        }
-
-        // Expand dropdowns in active path
-        let currentGroup = currentActiveLink.closest('.nav-group');
-        while (currentGroup) {
-            toggleDropdown(currentGroup, true);
-            currentGroup = currentGroup.parentElement.closest('.nav-group');
-        }
+        });
     }
 
-    // Dropdown handling
-    function toggleDropdown(group, expand, isManual = false) {
+    // Dropdown handling - simplified for manual control only
+    function toggleDropdown(group, expand) {
         if (!group) return;
 
         const isExpanded = expand !== undefined ? expand : !group.classList.contains('expanded');
@@ -154,25 +184,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const toggle = group.querySelector('.has-children');
         if (toggle) toggle.classList.toggle('expanded', isExpanded);
 
-        if (isManual) {
-            if (isExpanded) {
-                manuallyExpandedGroups.add(group);
-            } else {
-                manuallyExpandedGroups.delete(group);
-                // Close nested dropdowns when manually closing
-                group.querySelectorAll('.nav-group').forEach(nested => {
-                    manuallyExpandedGroups.delete(nested);
-                    toggleDropdown(nested, false);
-                });
-            }
-        }
-
-        // Only close nested dropdowns when closing automatically
-        if (!isExpanded && !isManual) {
-            group.querySelectorAll('.nav-group').forEach(nested => {
-                if (!manuallyExpandedGroups.has(nested)) {
-                    toggleDropdown(nested, false);
+        if (isExpanded) {
+            manuallyExpandedGroups.add(group);
+            // Close sibling dropdowns at the same level
+            const sectionLevel = group.getAttribute('data-section-level');
+            const siblings = navMenu.querySelectorAll(`.nav-group[data-section-level="${sectionLevel}"]`);
+            siblings.forEach(sibling => {
+                if (sibling !== group) {
+                    sibling.classList.remove('expanded');
+                    const siblingToggle = sibling.querySelector('.has-children');
+                    if (siblingToggle) siblingToggle.classList.remove('expanded');
+                    manuallyExpandedGroups.delete(sibling);
                 }
+            });
+        } else {
+            manuallyExpandedGroups.delete(group);
+            // Close nested dropdowns when closing
+            group.querySelectorAll('.nav-group').forEach(nested => {
+                nested.classList.remove('expanded');
+                const nestedToggle = nested.querySelector('.has-children');
+                if (nestedToggle) nestedToggle.classList.remove('expanded');
+                manuallyExpandedGroups.delete(nested);
             });
         }
     }
