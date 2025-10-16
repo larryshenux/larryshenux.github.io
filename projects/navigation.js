@@ -67,13 +67,30 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(checkInitialScrollPosition, 100);
 
     function setMenuVisibility(show) {
-        isMenuVisible = show;
+        const isMobile = window.innerWidth < 992;
+
         requestAnimationFrame(() => {
-            navMenu.style.opacity = show ? '1' : '0';
-            navMenu.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
-            navMenu.style.pointerEvents = show ? 'auto' : 'none';
-            navButton.style.opacity = show ? '1' : '0';
-            navButton.style.pointerEvents = show ? 'auto' : 'none';
+            if (!isMobile) {
+                // Desktop: Show/hide the menu directly
+                isMenuVisible = show;
+                navMenu.style.opacity = show ? '1' : '0';
+                navMenu.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
+                navMenu.style.pointerEvents = show ? 'auto' : 'none';
+                navMenu.style.display = 'block';
+                navOverlay.style.display = 'none';
+            } else {
+                // Mobile: Only control button visibility
+                navButton.style.opacity = show ? '1' : '0';
+                navButton.style.pointerEvents = show ? 'auto' : 'none';
+                
+                // Don't affect menu state if button is shown
+                if (!show) {
+                    isMenuVisible = false;
+                    navMenu.style.display = 'none';
+                    navOverlay.style.display = 'none';
+                    body.classList.remove('no-scroll');
+                }
+            }
         });
     }
 
@@ -144,25 +161,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navigation visibility and menu toggle
     function toggleMenu(show) {
-        const isMobile = window.innerWidth < 992;
         const menuShouldBeVisible = show !== undefined ? show : !isMenuVisible;
-
-        // Don't allow showing the menu if we're in the title section
-        if (menuShouldBeVisible && !isMenuVisible) return;
-
-        if (isMobile) {
-            navMenu.style.display = menuShouldBeVisible ? 'block' : 'none';
-            navOverlay.style.display = menuShouldBeVisible ? 'block' : 'none';
-            body.classList.toggle('no-scroll', menuShouldBeVisible);
-        } else {
-            navMenu.style.display = isMenuVisible ? 'block' : 'none';
-            navOverlay.style.display = 'none';
-            body.classList.remove('no-scroll');
-        }
-
+        
+        // Only handle menu toggling, not button visibility
+        isMenuVisible = menuShouldBeVisible;
+        
+        // Toggle menu display
+        navMenu.style.display = 'block'; // Always keep in DOM for transitions
+        navOverlay.style.display = menuShouldBeVisible ? 'block' : 'none';
+        body.classList.toggle('no-scroll', menuShouldBeVisible);
+        
         requestAnimationFrame(() => {
             navMenu.style.opacity = menuShouldBeVisible ? '1' : '0';
             navMenu.style.pointerEvents = menuShouldBeVisible ? 'auto' : 'none';
+            navMenu.style.transform = menuShouldBeVisible ? 'translateX(0)' : 'translateX(20px)';
+            
+            // Hide menu from DOM only after transition
+            if (!menuShouldBeVisible) {
+                setTimeout(() => {
+                    if (!isMenuVisible) { // Double check state hasn't changed
+                        navMenu.style.display = 'none';
+                    }
+                }, 300); // Match transition duration
+            }
         });
     }
 
@@ -231,10 +252,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event Listeners
+    let isClickProcessing = false;
     navButton.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        
+        // Prevent double-clicks and race conditions
+        if (isClickProcessing) return;
+        isClickProcessing = true;
+        
         toggleMenu();
+        
+        // Reset after transition
+        setTimeout(() => {
+            isClickProcessing = false;
+        }, 300);
     });
 
     navOverlay.addEventListener('click', () => toggleMenu(false));
