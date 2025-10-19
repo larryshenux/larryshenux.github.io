@@ -1,0 +1,20 @@
+/* NetBenefits specific styles */
+
+/* Hero Section - Override default project styles */
+.hero-section {
+    height: 67vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #184012, #368727);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section .project-title {
+    color: white;
+    text-align: center;
+    opacity: 1;
+    position: static;
+    transform: none;
+}
