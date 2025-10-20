@@ -18,3 +18,12 @@
     position: static;
     transform: none;
 }
+
+/* Large width images - 75% of viewport width on larger screens */
+.large-width-img {
+    width: 75vw;
+    height: auto;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

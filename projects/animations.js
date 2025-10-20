@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectTitle = document.querySelector('.project-title');
     
     function updateHeroEffects() {
+        // Only run if hero overlay and project title exist (for pages with hero images)
+        if (!heroOverlay || !projectTitle) {
+            return;
+        }
+        
         // Get the hero section's position relative to viewport
         const heroRect = heroSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
