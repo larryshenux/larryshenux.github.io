@@ -153,7 +153,7 @@
             <div class="col-8">
                 <h2 id="overview" class="mb-4">Overview</h2>
                 <p>Fidelity's NetBenefits® is an online portal that provides millions of employees access to their benefits information, including retirement plans, health insurance, and more. Throughout the years, the platform has evolved to meet the changing needs of its users, incorporating new technologies and modern design patterns to enhance the user experience.</p>
-                <p>That said, there is always room for improvement. As one of its users, I know firsthand what it's like interacting with the NetBenefits UI, what works and what doesn't. I can see areas on the platform where other users may become confused or overwhelmed. And the page that gets the most interactions, as with most other web applications, is the homepage.</p>
+                <p>With that being said, there is always room for improvement. As one of its users, I know firsthand what it's like interacting with the NetBenefits UI, what works and what doesn't. I can see areas on the platform where other users may become confused or overwhelmed. And the page that gets the most interactions, as with most other web applications, is the homepage.</p>
                 <p>For that reason, I wanted to focus on redesigning the homepage, identifying potential weakpoints in the design and coming up with an alternative design, employing my knowlege of Gestalt psychology and other UXD principles such as the renowned Laws of UX.</p>
             </div>
         </div>
@@ -185,13 +185,15 @@
                 <p>Before I began drafting wireframes, I had to ensure that I include everything that the homepage should have. That meant determining what is important and needs to stay (or be added) and what isn't as important and should be removed (or rearranged).</p>
                 <p>Based on my intial analysis, it seemed to me that the intent of the homepage is to provide a high level overview of account statuses and benefit subscriptions along with the proper redirect links for users to manage them. In addition to basic retirement account related information, the current homepage also had educational resources for users to learn more about how they can better utilize their benefits and optimize their investing to suit their needs.</p>
                 <p>With that, I determined that everything currently on the homepage was essential to its purpose and should be retained in the redesign. It became apparent to me that the homepage isn't there just to diplay numbers and links, but to also facilitate user understanding and engagement with their benefits.</p>
-                <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#368727" data-base-color="#f1fbef">NetBenefits should help people <strong>reach their investment goals</strong>, not just to provide numbers and balances. This commitment to <i>helping customers</i> makes the usage of investment projects, visuals like charts and graphs, as well as <i>positive, personal language</i>, all the more important.</p>
-                <h3 class="mt-5">Defining the Problem</h3>
-                <p>Knowing what needs to be on the homepage, the next step was to identify the areas on the existing homepage that could be improved.</p>
+                <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#368727" data-base-color="#f1fbef">NetBenefits should help people <strong>reach their investment goals</strong>, not just provide users their balances. This commitment to <i>helping customers</i> makes the usage of investment projects, visuals like charts and graphs, as well as <i>positive, personal language</i>, all the more important.</p>
+                <h3 class="mt-5">Pinpointing Areas for Improvement</h3>
+                <p>Knowing what needs to be on the homepage, the next step for me was to identify the areas on the existing homepage that could be improved.</p>
                 <p>I scanned the current homepage layout and content, tested several links, and took note of my observations.</p>
                 <div class="my-5">
                 <img src="netbenefits-redesign-assets/netbenefits-annotations.png" alt="Existing NetBenefits homepage, annotated" class="img-fluid w-100 rounded shadow-sm">
-                <div class="text-center text-secondary mt-2 small image-caption">Existing NetBenefits homepage, annotated</div>
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Existing NetBenefits homepage, annotated</div>
+                <p>Where I believed the current homepage design falls short is with the organization of content on the page. While the contents themselves all seemed to have a place on the homepage, I felt the way they were arranged did not seem logical. And with many cards and different types of information being conveyed all at once, I realized how this could be overwhelming for some users and hinder their ability to find the information they need quickly.</p>
+                <p>As I observed the layout, it seemed like each card was trying to grab my attention, such as the frequent usage of bolded text, bright colors, and groupings of unrelated information. As a result, I found it difficult to focus on any one piece of information. Addressing the additional cognitive load from this, therefore, will be my main challenge in this redesign.</p>
             </div>
         </div>
     </div>
@@ -199,52 +201,67 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h2 id="define" class="mb-4">Define</h2>
-                <p>Having created the journey maps and personas, it was time to define the main problems the app would solve. During the prior interviews, I had written a one sentence user story for each person highlighting their needs. Taking these into account along with the information I gathered from the journey maps, I formulated them into problem statements which explicitly lays out their problem to solve.</p>
-                <h3 id="user-stories" class="mt-5">User Stories and Problem Statements</h3>
-                <p>It was interesting for me to see and compare the user stories and problem statements side-by-side. While the user story focuses on the user's needs and goals from their perspective, the problem statement frames the issue in a way that highlights the user's challenges in a specific context from an objective, third-person perspective, giving it a concreteness that makes it tangible to address.</p>
-                <h4 id="tammy">Tammy</h4>
-                <table class="content-table indent">
-                <tr>
-                    <td>User Story</td>
-                    <td>As a busy mother of two, I would like an easy way to access all relevant and up-to-date bus related information in one place so that I don't have to spend time searching for them.</td>
-                </tr>
-                <tr>
-                    <td>Problem Statement</td>
-                    <td>Tammy is a busy mother who needs a quick and convenient way of accessing bus information because it will save her the extra mental bandwidth needed to scour for it.</td>
-                </tr>
-                </table>
-                <h4 id="billy">Billy</h4>
-                <table class="content-table indent">
-                <tr>
-                    <td>User Story</td>
-                    <td>As a student who primarily relies on the bus for transportation to and from school, I need a way to know the status of my bus in order to be better prepared when I'm waiting at the bus stop.</td>
-                </tr>
-                <tr>
-                    <td>Problem Statement</td>
-                    <td>Billy is a student who needs real-time updates on bus status so he can plan his arrival at the bus stop and avoid unnecessary waiting or missed buses.</td>
-                </tr>
-                </table>
-                <h4 id="janet">Janet</h4>
-                <table class="content-table indent">
-                <tr>
-                    <td>User Story</td>
-                    <td>As a mother who isn't great with technology, it would help me if the bus route map/app is easy to use so that I can quickly get the information I need.</td>
-                </tr>
-                <tr>
-                    <td>Problem Statement</td>
-                    <td>Janet needs a user-friendly bus information app because a complicated interface makes it difficult for her to find the information she needs in a timely manner.</td>
-                </tr>
-                </table>
-                <h4 id="hypothesis-statements">Hypothesis Statements</h4>
-                <p>Based on the user stories and problem statements, I came up with the following hypotheses:</p>
-                <ol class="text-secondary fst-italic">
-                    <li>If Tammy can get bus information from an app designed specifically for that purpose, all the information she needs will be contained in one place, ensuring her convenience.</li>
-                    <li>If Billy can conveniently see bus status updates within an app on his phone, he will not feel as rushed or worried in the morning as he prepares to leave for school.</li>
-                    <li>If Janet can use an app with minimal elements and a familiar layout, it would greatly improve her experience of finding the bus information she needs.</li>
-                </ol>
-                <p>Through these hypothesis statements, I determined the focus for my app, summarized into one value proposition:</p>
-                <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#ffc107" data-base-color="#fef095"><strong>NextStop</strong> provides a <i>streamlined experience</i> for parents and students to get the bus information they need at their fingertips. It provides a simple, easy to use interface, and added features like <i>bus location tracking</i> and <i>estimated arrival times</i> so that no one will be in the dark about their bus's whereabouts.</p>
+                <h2 id="define" class="mb-4">Designing the New Layout</h2>
+                <h3 id="user-stories" class="mt-5">Notification Messages</h3>
+                <p>Working from top to bottom, I decided to start with revisiting the notification messages on the homepage.</p>
+                <img src="netbenefits-redesign-assets/original-notifications.png" alt="NetBenefits original notifications layout" class="img-fluid w-100 rounded shadow mt-4 mb-5">
+                <p>It seemed odd to me that the notifications would appear to be sandwiched in between the portfolio balance and account information sections. Because it isn't related to either section, it looked out of place and didn't feel right in its current spot.</p>
+                <p>A better place to put it would be at the very top, below the nav bar and above the portfolio balance section. Because of the nature of notifications, supposedly something important enough for users to need to notice, this positioning would ensure that it would be the first thing that users see, and address anything important as needed.</p>
+                <img src="netbenefits-redesign-assets/dashboard-wireframe.png" alt="NetBenefits original notifications layout" class="img-fluid w-100 rounded shadow mt-4 mb-5">
+                <p>I also wanted to give users the option to close the notifications if they are not relevant to them or they want to revisit them at a different time, something that the current notifications bar does not allow.</p>
+                <p>To accomplish this, I intended on adding two things: an "X" button to close the notification as well as a bell icon for users to conveniently access their notifications whenever they need to. Adding a dot indicator to the bell icon for unread notifications would also help users keep tabs on their messages.</p>
+                <h3 id="user-stories" class="mt-5">Content Arrangement</h3>
+                <p>The next thing I looked at was how to rearrange and improve the rest of the content on the homepage. The biggest thing here was to look for inconsistencies in content grouping and visual hierarchy. Which elements should go together? Does the current layout for this particular card make sense? If not, where can I move the content so that it flows better?</p>
+                <img src="netbenefits-redesign-assets/wireframe-reference.png" alt="NetBenefits original homepage wireframe labels reference" class="img-fluid w-100 rounded shadow mt-4">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Labels used in wireframes</div>
+                <p>With the notification bar out of the way, I explored several content organization options based on my prior analysis and annotations.</p>
+                <img src="netbenefits-redesign-assets/wireframe-1.png" alt="Wireframe 1 of NetBenefits homepage redesign" class="img-fluid w-100 rounded shadow mt-4">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">NetBenefits homepage redesign - Wireframe 1</div>
+                <img src="netbenefits-redesign-assets/wireframe-2.png" alt="Wireframe 2 of NetBenefits homepage redesign" class="img-fluid w-100 rounded shadow mt-4">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">NetBenefits homepage redesign - Wireframe 2</div>
+                <p>In my wireframes, I explored the following ideas:</p>
+                <ul class="list-gap">
+                    <li>Replacing the retirement savings graph with a portfolio savings graph and enlarging it to take up a larger portion of the screen's real estate.</li>
+                    <li>Rearranging the placement of the items in the "Your Portfolio" and "Health & Insurance" dashboard</li>
+                    <li>Regrouping content sections in order based on priority and relevance</li>
+                </ul>
+                <h4 id="hypothesis-statements" class="mt-5">Replacing the Retirement Savings Graph</h4>
+                <p>One thing I had noticed when analyzing the original homepage was that the small graph present only provided a visual indicator of one's retirement savings, specifically the 401k account, over time. Previously, I had always thought this reflected the entire balance showing under "Your Portfolio", so I didn't realize until upon closer inspection.</p>
+                <img src="netbenefits-redesign-assets/original-graph.png" alt="Retirement savings graph, original homepage" class="img-fluid my-5 shadow d-block mx-auto">
+                <p>I found this mismatch to be slightly misleading, as users may not have a clear understanding of what the graph represents, despite it being labeled "Fidelity Ret Savings". By replacing it with a portfolio savings graph, it should accurately reflect the number presented in the portfolio balance.</p>
+                <p>In addition to replacing the graph to reflect the entire portfolio balance, I also wanted to enlarge it so that users could better see the graph details.</p>
+                <h4 id="hypothesis-statements" class="mt-5">Rearranging Dashboard Item Placement</h4>
+                <p>Another observation I made regarded the placement items within the dashboard. Currently, "Your Portfolio", "Health & Insurance", and "Set goals" text are positioned side-by-side on the same bar.</p>
+                <img src="netbenefits-redesign-assets/top-bar.png" alt="Retirement savings graph, original homepage" class="img-fluid my-5 shadow d-block mx-auto">
+                <p>Initially, I didn't see the need to change this layout, but with the addition of the enlarged graph at the top of the homepage, I reasoned that it would make more sense to have the portfolio balance displayed right next to the graph. Naturally, that meant the "Health & Insuance" cost would follow it and be displayed along with the balance in "Your Portfolio".</p>
+                <p>As for the "Set goals", the last item in the original dashboard, I decided it wouldn't fit in the same arrangement and planned for it to be moved elsewhere.</p>
+                <img src="netbenefits-redesign-assets/your-portfolio-wireframe.png" alt="Your Portfolio placement in wireframe" class="img-fluid my-5 shadow d-block mx-auto">
+                <p>However, when I navigated to Fidelity's brokerage website to reference the graph showing the entire portfolio balance, I saw that the portfolio balance was displayed directly on top of the graph.</p>
+                <img src="netbenefits-redesign-assets/fidelity-portfolio.png" alt="Your Portfolio placement in wireframe" class="img-fluid my-5 shadow d-block mx-auto">
+                <p>Thinking about it some more, I thought it would be best to follow suit as not only did it make more sense to have the portfolio balance be tied directly to the graph, but it would also mean following established design conventions.</p>
+                <p>This meant that "Health & Insurance" would have to have it's own separate card which is also a plus as that meant the two values that were previously otherwise unrelated, save for the fact they both pertained to the user's financial statuses, could now be displayed in a more cohesive manner.</p>
+                <img src="netbenefits-redesign-assets/your-portfolio-redesign.png" alt="Your Portfolio redesign" class="img-fluid mt-5 shadow d-block mx-auto">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Redesigned "Your Portfolio" and "Health & Insurance" hi-fi mockup</div>
+                <p>This also meant I could separate out the benefits portion from the accounts under what was previously labeled "Your accounts and benefits", allowing for a clearer distinction between the two and additional spacing for easier viewing.</p>
+                <img src="netbenefits-redesign-assets/your-accounts-redesign.png" alt="Your Accounts redesign" class="img-fluid mt-5 shadow d-block mx-auto">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Redesigned "Your Accounts" hi-fi mockup</div>
+                <p>While the various benefits links would be placed directly under "Health & Insurance", the new "Your accounts" would get its own card, placed right after the new portfolio dashboard as it directly relates to the sum shown in the portfolio balance as well as the contents displayed in the graph.</p>
+                <h4 id="hypothesis-statements" class="mt-5">Regrouping Content Sections</h4>
+                <p>The remaining pieces left to be addressed were these less important but still needed cards:</p>
+                <img src="netbenefits-redesign-assets/original-cards.png" alt="Original cards left to be redesigned" class="img-fluid my-5 shadow d-block mx-auto">
+                <p>As these cards were more informative or offered secondary actions, I moved them to the bottom and/or to the side of the homepage, after the more important portfolio and health benefits sections. They needed to be present but out of the way from the main content.</p>
+                <p>By moving most of the content cards to the side, these secondary actions are now less intrusive and allow users to focus on the primary tasks at hand.</p>
+                <img src="netbenefits-redesign-assets/redesigned-cards.png" alt="Redesigned card layout" class="img-fluid mt-5 shadow d-block mx-auto">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Redesigned card layout hi-fi mockup</div>
+                <p>The positioning for each card was also intentional, with the "Attention" missing benefits card directly after the benefits card and the "Checkup to level up" related to money planning placed to the right of the "Your Accounts" card where all the money information is.</p>
+                <p>I placed the Retirement Goal Planner section, AKA "Your retirement goal" or "Your retirement savings milestone" (they both share the same card), after "Your Accounts" because it was a lower priority item but still relevant to investing.</p>
+                <p>Another change I made here was to include the "Set goals" text, which had previously been removed from the original dashboard, in the Retirement Goal Planner section.</p>
+                <img src="netbenefits-redesign-assets/redesigned-planner.png" alt="Redesigned retirement planner" class="img-fluid mt-5 shadow d-block mx-auto">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Redesigned retirement planner hi-fi mockup</div>
+                <p>I felt it was appropriate to have the text here as it is related to retirement goal setting and could be helpful for anyone looking to take any action related to their retirement planning.</p>
+                <h3 id="app-requirements" class="mt-5">Final Homepage Design</h3>
+                <img src="netbenefits-redesign-assets/netbenefits-redesign.png" alt="Redesigned NetBenefits homepage" class="img-fluid mt-5 shadow d-block mx-auto">
+                <div class="text-center text-secondary mt-2 small image-caption mb-5">Redesigned NetBenefits homepage hi-fi mockup layout 1</div>
             </div>
         </div>
     </div>
@@ -255,178 +272,7 @@
             <div class="col-8">
                 <h2 id="ideate">Ideate</h2>
                 <p>Now that I had a clear idea of the problems I'm solving for, I needed to list out the core app requirements that would address them. Having a list of must have features ready as I start sketching out potential designs will help ensure that I don't forget anything important.</p>
-                <h3 id="app-requirements" class="mt-5">App Requirements</h3>
-                <ul>
-                    <li>Map of routes with live bus tracking</li>
-                    <ul>
-                        <li>Stop location</li>
-                        <li>Arrival times, ETA</li>
-                    </ul>
-                    <li>Updates/notification messages</li>
-                    <li>Stops</li>
-                    <li>Route eligibility based on address</li>
-                    <li>Information</li>
-                    <ul>
-                        <li>Contact info</li>
-                        <li>FAQs</li>
-                    </ul>
-                </ul>
-                <p>Once I had a better idea of what the app needed, I started planning the layout of the app. To do this, I created an information architecture diagram to map out the structure and high-level flow of the app.</p>
-                <h3 id="ia-diagram" class="mt-5">IA Diagram</h3>
-                <img src="nextstop-assets/nextstop-ia-diagram.jpg" alt="NextStop Information Architecture Diagram" class="img-fluid my-4 shadow">
-                <p>Using the IA diagram as a guide, I sketched out wireframes for the main screens of the app.</p>
-                <p>Starting off with the welcome screen where users are greeted with a friendly message and prompted to enter their school district and address, the next screen that displays would be the <i>My Routes</i> screen. Here, users can add bus routes for their address and view route information such as arrival times and stop location. When users attempt to add a route, it will direct them to the <i>Route Search</i> screen where they can make their selection. Once a route is selected, they will be taken back to the My Routes screen.</p>
-                <p>The notifications screen will display important updates and alerts for users, such as bus delays, weather updates, or school closures. Users will see an alert bubble pop up on the bottom menu icon to indicate new notifications.</p>
-                <p>The information screen will provide users with contact information for schools in the chosen district and transportation department. FAQs can also be found on this screen.</p>
-                <p>Finally, the app will include a screen where users can submit any concerns or feedback to the district.</p>
-                <h3 id="wireframes" class="mt-5">Wireframes</h3>
-                <div id="wireframesCarousel" class="carousel carousel-fade my-5 shadow-sm" data-bs-ride="carousel" data-bs-interval="5000">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#wireframesCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="nextstop-assets/wf-1.jpg" class="d-block w-100 persona-carousel-img" alt="Welcome Screen">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="nextstop-assets/wf-2.jpg" class="d-block w-100 persona-carousel-img" alt="My Routes Screen">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="nextstop-assets/wf-3.jpg" class="d-block w-100 persona-carousel-img" alt="Route Search Screen">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="nextstop-assets/wf-4.jpg" class="d-block w-100 persona-carousel-img" alt="Notifications Screen">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="nextstop-assets/wf-5.jpg" class="d-block w-100 persona-carousel-img" alt="Information Screen">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#wireframesCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#wireframesCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <p>In my initial designs, I used the hamburger menu in my wireframes, thinking it would be a good way to save space on smaller screens. However, I later realized that this approach might not be the best for discoverability, as users don't immediately see all available options.</p>
-                <p>To address this, I explored using a tabbed navigation pattern as well. In the end, I felt that the number of functions my app offered did not warrant the use of a hamburger menu, and with a bottom menu, users could easily switch between different sections of the app without having to open and close a menu.</p>
-                <img src="nextstop-assets/bottom-nav-wf.png" alt="Bottom Navigation Wireframe" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>Also during the wireframing process, I found the Search Routes screen to be redundant. The problem was if users are adding routes from the My Routes screen, why should they be taken away to a different screen just to perform that task? Why not contain that functionality within the My Routes screen?</p>
-                <p>Users are already inputting their address at the start during app setup. It's unlikely users would want to search for a district they're not zoned for, but in the event they needed to switch districts or addresses, it would make more sense for them to do so in a "Settings" page. Once updated, they will have the option to add routes for their new location on the My Routes screen.</p>
-                <p>Another thing I realized was that maybe having a "Submit a Concern" screen may not be necessary. If a parent or student had an issue they wanted to bring up, they can reference the contact info from the information screen and submit their concern through the appropriate channels, so the additional screen dedicated for that purpose seemed extraneous.</p>
-                <p>With these considerations in mind, I aimed to streamline the user experience and reduce unnecessary screens.</p>
-                <h3 id="usability-study" class="mt-5">Usability Study</h3>
-                <p>After I completed the wireframes, I was ready to test them out with users. I built a simple lo-fi prototype referencing the completed wireframes and conducted a usability study with 4 participants to identify any usability issues and gather feedback on the functionality of the app.</p>
-                <div class="horizontal-scrollbar mt-4" style="width: 100%; max-width: 100%;">
-                    <img src="nextstop-assets/nextstop-lofi-wireframes.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
-                </div>
-                <div class="text-center text-secondary mt-2 mb-5 small image-caption">Low fidelity wireframes used in first prototype</div>
-                <p>My study plan aimed to answer these key research questions:</p>
-                <ul class="mb-5">
-                    <li>Is the app easy to use?</li>
-                    <li>How easy is it for users to find and add a route to track?</li>
-                    <li>How long does it take users to complete their desired tasks?</li>
-                    <li>Does the app provide a better experience for users than their existing way of finding bus information?</li>
-                    <li>What are some other opportunities for design changes to further enhance user experience?</li>
-                </ul>
-                <p>To measure the effectiveness of the app designs, I had each participant complete a series of tasks which would then be evaluated against two main KPIs: time on task and conversion rates. As they performed each task, they were encouraged to think aloud and share their thought process. The time of completion on each task was then recorded and the difficulty of the task was rated on a scale from 1 to 3 as follows: </p>
-                <ul class="list-unstyled indent mb-5">
-                    <li>1 - Easy to complete</li>
-                    <li>2 - Completed but with some difficulty</li>
-                    <li>3 - Not completed</li>
-                </ul>
-                <p>I had each participant complete 4 tasks, each corresponding to a defining feature within the app:</p>
-                <ol class="list-gap mb-5">
-                    <li>App setup and adding a new route to track</li>
-                    <li>Changing your address</li>
-                    <li>Checking for notifications</li>
-                    <li>Finding contact information</li>
-                </ol>
-                <p>During each task, I took note of my observations and asked follow-up questions like "Was this feature useful? Why or why not?" and "What was easy and what was challenging?"</p>
-                <p>At the end of the study, I gathered feedback and overall impressions from each participant. I also asked the following questions to wrap up the research study:</p>
-                <ul>
-                    <li>At any point during any of the tasks, were you confused or uncertain on how to perform a certain action?</li>
-                    <li>Did you experience anything unexpected as you were navigating through the app?</li>
-                </ul>
-                <h4 id="affinity-diagram" class="mt-5">Affinity Diagram</h4>
-                <p>After the study, I analyzed the data I collected and organized similar findings and comments from participants into groups of sticky notes. I wanted to identify patterns from the research to see where users tended to struggle or excel within the app.</p>
-                <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
-                    <img src="nextstop-assets/nextstop-affinity-diagram.png" alt="NextStop Lo-Fi Wireframes" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
-                </div>
-                <p>From this exercise, I identified several insights:</p>
-                <ul>
-                    <li>Most users ended up opening the settings screen as they were trying to add a route to their list. This meant the current pop-up for adding routes isn't intuitive enough for users to successfully add a route.</li>
-                    <li>Some users tapped the route bar in the pop-up to add a route. It seems like the addition button isn't an effective indicator for users to add a route.</li>
-                    <li>Some users didn't use the chips to remove filters. Not all users recognized the function of filter chips and opted to use the more familiar filter icon instead.</li>
-                </ul>
-                <p>Some of the groupings in the affinity diagram, like the one on "unresponsive welcome page elements", had more to do with missing features in the low-fidelity prototype rather than actual usability issues related to the design of the app. As such, those groupings were given less weight when deliberating design enhancements.</p>
-                <h4 id="recommendations" class="mt-5">Recommendations</h4>
-                <p>Based on the insights gathered from the study, I made the following design recommendations:</p>
-                <ul>
-                    <li>Allow the user to add a route not only by tapping the addition button but also by tapping on the route bar option itself to lower the chances of failing to add a route.</li>
-                    <li>Provide flexibility for filtering capabilities, whether by using the chips or the filter icon, to accommodate different user preferences.</li>
-                    <li>Make it easier for users to understand what to do once they set up the app.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hi-fi Prototype -->
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h2 id="hi-fi-prototype">Hi-fi Prototype</h2>
-                <p>Having tested the prototype and gathered key insights, I proceeded to build a high-fidelity prototype of the NextStop app.</p>
-                <h3 id="style-guide" class="mt-5">Style Guide</h3>
-                <p>Before I started designing anything though, I needed to first determine the colors and various fonts for the app. To ensure that my app remained consistent throughout, I created a style guide that outlined the color palette and typography to be used.</p>
-                <img src="nextstop-assets/nextstop-style-guide.png" alt="NextStop Style Guide" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>For app color inspiration, other than the color of school buses being yellow, I chose yellow and purple as the primary colors for the app as they conveyed youthfulness and energy which I thought was befitting of the school setting.</p>
-                <p>Aesthetics aside, I also needed to ensure the readability of the text. It had to be clearly visible, following WCAG 2.1 AA standards for 4.5:1 contrast ratio.</p>
-                <h3 id="hi-fi-mockups" class="mt-5">Hi-fi Mockups</h3>
-                <p>As I designed the mockups in Figma, I created reusable components to maintain consistency across the app. I also leveraged existing design libraries like Google's Material Design components to help speed up the process.</p>
-                <p>Once I had completed the mockup, I wired up the interactions across all the screens to construct a high-fidelity version of the prototype to present to stakeholders.</p>
-                <div class="horizontal-scrollbar mt-5 mb-2" style="width: 100%; max-width: 100%;">
-                    <img src="nextstop-assets/nextstop-hi-fi-mockups.png" alt="NextStop Hi-Fi Mockups" style="width: 1900px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
-                </div>
-                <div class="text-center text-secondary mt-2 mb-5 small image-caption">First iteration of NextStop's hi-fi mockups</div>
-                <h3 id="revisions">Revisions</h3>
-                <p>After I had presented the mockups to interested parties, I gathered feedback and made several revisions to improve the design.</p>
-                <h4 id="revisiting-add-button" class="mt-5">Revisiting the Add Button</h4>
-                <p>There were two things about the add button I had to address in this revision. The first was the location of the button. The initial design was a floating action button located in the bottom right corner of the screen. While this is a commonly used pattern, it wasn't the most intuitive location for users to find it.</p>
-                <p>One of the comments on the affinity diagram mentioned the following:</p>
-                <p class="bd-callout blockquote mt-4 mb-5" data-border-color="#5bc0de" data-base-color="#d1f3fa">"I think it would be helpful to have a tutorial at the start so I understand what I'm doing."</p>
-                <p>My initial solution to this was to keep the location of the button, but draw the user's attention to the add button with an arrow animation that appears after a few seconds from the moment the user navigates to the My Routes screen.</p>
-                <img src="nextstop-assets/nextstop-animation.gif" alt="NextStop Add Route Animation" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>I didn't consider the possibility of moving the button to a more discoverable location but rather focused on enhancing its visibility in its original spot. I had thought that if I moved the button to the center, the tradeoff would be the button also moving with the contents in the screen as they expand or contract, making its position inconsistent. On the other hand, keeping it in the original position meant it would always be in view in the same spot.</p>
-                <p>However, once I went back to the drawing board and implemented this design, I found that it actually fit the screen quite well. If moving the button to the center aids discoverability, I would rather go with this solution and take the minor drawback of a non-fixed location as it addresses the root problem of unintuitive action items on the screen rather than applying a band-aid fix to an existing design.</p>
-                <img src="nextstop-assets/nextstop-revised-add-button.png" alt="NextStop Revised Add Button" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>The second issue I wanted to address was the dual functionality of the "add" button once a route had been added. In the original design, the button would transform into a plus/minus button, signaling to the user that they could also remove routes if they pressed that button. When pressed, it would open a add/remove route modal where the previously added route would display a minus button which the user can tap and remove the route from their list.</p>
-                <div class="horizontal-scrollbar my-5" style="width: 100%; max-width: 100%;">
-                    <img src="nextstop-assets/nextstop-add-minus-before.png" alt="NextStop Add/Minus Before" style="width: 1200px; max-width: none; height: auto; display: block;" class="shadow-sm rounded">
-                </div>
-                <p>The issue here is the inconsistency of the button's behavior. While there isn't much problem functionally, it is better to limit this where possible to avoid potential confusion for the user. This can be accomplished by restricting the button's functionality to a single action- the addition of routes.</p>
-                <p>Back when I was designing the first hi-fi mockup, I did consider this problem and thought about including a trash can icon on the rightmost side of the route card. Users could delete their route by tapping on this icon and they could do so without having to navigate to another subscreen. But I didn't want the user to accidentally remove a route, and I thought adding a confirmation screen to address that wouldn't be much different than having the user go through the existing flow as that also opened a modal.</p>
-                <img src="nextstop-assets/nextstop-delete-trashcan.png" alt="NextStop Delete Trash Can" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>Something I had overlooked though in my prior assessment was that reusing a common design pattern such as the trash can icon could help users quickly recognize how they can remove a route. As for the confirmation modal, it is also another standard pattern that users are likely familiar with, not contributing much more complexity to the overall design of the screen.</p>
-                <p>And like how it was with trying out the new add button design, I found that when I tried implementing the trash can icon and modal confirmation flow, it actually made more sense to me and seemed to be an improvement over the old design.</p>
-                <h4 id="redesigning-modal" class="mt-5">Redesigning the Add Route Modal</h4>
-                <p>The add route modal that appears when the user attempts to add a route also had a few problems of its own. The overarching issue was with how the routes were presented. All the routes being the same color, for example, even for ones which are unavailable for users to add, contributes to added cognitive complexity when navigating the screen.</p>
-                <img src="nextstop-assets/nextstop-original-modal.png" alt="NextStop Original Modal" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>In the original design, the distinguishing element for an addable route was the presence of a dark gray plus sign. Routes that could not be added had a disabled light gray plus sign. In addition to this, there was a tiny description that also mentioned the availability of a route.</p>
-                <p>However, the reality is users don't try to read or pay attention to every detail present when they can avoid it. Instead, they tend to find the quickest way to accomplish their task, and it is my job as a designer to make it as quick and easy as possible for them to do what they need to do.</p>
-                <p>In this case, I can do 2 things to help my users quickly understand what they see and find the correct corresponding action:</p>
-                <ol class="list-gap">
-                    <li>Make the available routes visually distinct from the unavailable ones</li>
-                    <li>Separate the available routes from the unavailable ones</li>
-                </ol>
-                <img src="nextstop-assets/nextstop-redesigned-modal.png" alt="NextStop Redesigned Modal" class="img-fluid my-5 shadow d-block mx-auto">
-                <p>Upon making the change, I can see that the available routes are now more prominent and easier to identify, while the unavailable routes are clearly separated and less distracting. This should help users quickly find the routes they can add without having to evaluate each route option one by one.</p>
+                
             </div>
         </div>
     </div>
