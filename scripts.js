@@ -26,15 +26,9 @@ function setTheme(theme) {
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggles = ['theme-toggle', 'theme-toggle-mobile'];
     
-    // Load saved theme or use system preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        // Check system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setTheme(prefersDark ? 'dark' : 'light');
-    }
+    // Load saved theme or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
     
     // Handle theme toggle clicks for both desktop and mobile
     themeToggles.forEach(toggleId => {
@@ -44,13 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentTheme = document.documentElement.getAttribute('data-bs-theme');
                 setTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
-        }
-    });
-    
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
         }
     });
 });
