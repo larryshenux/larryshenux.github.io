@@ -226,3 +226,14 @@ body {
         width: 75% !important;
     }
 }
+
+/* Override Bootstrap's md breakpoint to extend mobile navbar up to 992px */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Force hide desktop navbar and show mobile navbar between 768px-991px */
+    .navbar .col-8.d-none.d-md-flex {
+        display: none !important;
+    }
+    .navbar .col-12.d-flex.d-md-none {
+        display: flex !important;
+    }
+}
